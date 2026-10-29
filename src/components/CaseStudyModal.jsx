@@ -320,25 +320,55 @@ export default function CaseStudyModal({ projectId, onClose }) {
             Back to Work
           </a>
 
-          <a
-            href={`#project/${nextProject.id}`}
-            onClick={handleNextProjectClick}
-            style={{
-              fontSize: '0.95rem',
-              color: 'var(--accent-secondary)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              fontWeight: 500
-            }}
-            className="cs-next-link"
-          >
-            Next Project ({nextProject.title})
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </a>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: '0.95rem',
+                  color: 'var(--accent-primary)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontWeight: 600,
+                  border: '1px solid rgba(0, 217, 255, 0.3)',
+                  padding: '8px 16px',
+                  borderRadius: 'var(--radius-sm)',
+                  transition: 'all var(--transition-fast)'
+                }}
+                className="cs-live-link"
+              >
+                View Live
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            )}
+
+            <a
+              href={`#project/${nextProject.id}`}
+              onClick={handleNextProjectClick}
+              style={{
+                fontSize: '0.95rem',
+                color: 'var(--accent-secondary)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontWeight: 500
+              }}
+              className="cs-next-link"
+            >
+              Next Project ({nextProject.title})
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -352,6 +382,10 @@ export default function CaseStudyModal({ projectId, onClose }) {
         }
         .cs-next-link:hover {
           color: var(--text-primary) !important;
+        }
+        .cs-live-link:hover {
+          background-color: rgba(0, 217, 255, 0.1) !important;
+          border-color: var(--accent-primary) !important;
         }
         @media (min-width: 768px) {
           .cs-grid-layout {

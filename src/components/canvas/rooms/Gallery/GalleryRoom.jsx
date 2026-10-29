@@ -33,56 +33,59 @@ export const GALLERY_INTERACTION_AUDIO_SETTINGS = {
     rolloff: 2        // How fast the sound fades away (exponential)
 };
 
-// Define the unique projects and their textures
+// Define the unique projects and their textures (Clean Paper Colour Cards)
 const FALLBACK_PROJECTS = [
     {
-        id: 'apple-vision-pro',
-        title: 'APPLE VISION PRO EXPERIENCE',
-        front: '/textures/gallery/timberkittyprzod.webp',
-        painted: '/textures/gallery/timberkittyprzod_painted.webp',
-        url: '#project/apple-vision-pro',
-        description: 'A spatial computing web showcase with frame-by-frame 3D canvas interaction, luxury depth glass rendering, and scroll mechanics.',
+        id: 'annapoorna',
+        title: 'ANNAPOORNA FOOD DONATION PLATFORM',
+        category: 'FULL-STACK WEB & MAP APP',
+        color: '#10b981',
+        front: '/textures/gallery/tylkartki.webp',
+        painted: '/textures/gallery/tylkartki_painted.webp',
+        url: 'https://anapoorna-frontend.onrender.com/',
+        liveUrl: 'https://anapoorna-frontend.onrender.com/',
+        description: 'A full-stack, map-based food donation platform connecting donors with care homes using Spring Boot, Leaflet.js, and MySQL.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp']
     },
     {
-        id: 'bmw-m4-gt3',
-        title: 'BMW M4 GT3 EVO SHOWCASE',
-        front: '/textures/gallery/monetuneprzod.webp',
-        painted: '/textures/gallery/monetuneprzod_painted.webp',
-        url: '#project/bmw-m4-gt3',
-        description: 'An interactive automotive experience featuring 360° image sequence animation, live telemetry HUD displays, and Web Audio synthesis.',
+        id: 'nova-ai',
+        title: 'NOVA AI VOICE ASSISTANT',
+        category: 'VOICE-ENABLED AI ASSISTANT',
+        color: '#00d9ff',
+        front: '/textures/gallery/tylkartki.webp',
+        painted: '/textures/gallery/tylkartki_painted.webp',
+        url: 'https://nova-xidg.vercel.app',
+        liveUrl: 'https://nova-xidg.vercel.app',
+        description: 'An AI-powered virtual assistant featuring voice recognition, speech synthesis, and natural language processing built with React.js.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/csslogo.webp']
     },
     {
-        id: 'luxury-tailor',
-        title: 'LUXURY TAILOR WEBSITE',
-        front: '/textures/gallery/bioprzod.webp',
-        painted: '/textures/gallery/bioprzod_painted.webp',
-        url: '#project/luxury-tailor',
-        description: 'An elegant editorial web experience for a haute couture tailoring house featuring fluid fabric motion, interactive sizing, and luxury UX.',
+        id: 'portfolio-website',
+        title: 'PERSONAL DEVELOPER PORTFOLIO',
+        category: 'DEVELOPER PORTFOLIO & UI/UX',
+        color: '#a855f7',
+        front: '/textures/gallery/tylkartki.webp',
+        painted: '/textures/gallery/tylkartki_painted.webp',
+        url: 'https://github.com/DALWINRAJU',
+        liveUrl: 'https://github.com/DALWINRAJU',
+        description: 'A fully responsive personal portfolio designed and developed to highlight projects, technical skills, and UI/UX case studies.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/htmllogo.webp', '/textures/gallery/csslogo.webp']
     },
     {
-        id: 'fashion-jewellery-ecommerce',
-        title: 'JEWELLERY ECOMMERCE ENGINE',
-        front: '/textures/gallery/youngmultiprzod.webp',
-        painted: '/textures/gallery/youngmultiprzod_painted.webp',
-        url: '#project/fashion-jewellery-ecommerce',
-        description: 'A full stack luxury jewellery platform built for speed and aesthetics, featuring sub-second edge filtering, real-time cart sync, and cloud media pipelines.',
-        techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/csslogo.webp']
-    },
-    {
-        id: 'photography-accessories-platform',
-        title: 'PHOTOGRAPHY ACCESSORIES ENGINE',
-        front: '/textures/gallery/monetuneprzod.webp',
-        painted: '/textures/gallery/monetuneprzod_painted.webp',
-        url: '#project/photography-accessories-platform',
-        description: 'A precision full stack gear platform engineered for professional photographers, featuring camera lens compatibility matrices and dark UI.',
+        id: 'aura-ai-todo',
+        title: 'AURA AI VOICE TODO LIST',
+        category: 'CLIENT-SIDE AI PRODUCTIVITY',
+        color: '#f59e0b',
+        front: '/textures/gallery/tylkartki.webp',
+        painted: '/textures/gallery/tylkartki_painted.webp',
+        url: 'https://ai-todo-rho-two.vercel.app/',
+        liveUrl: 'https://ai-todo-rho-two.vercel.app/',
+        description: 'A glassmorphism AI to-do app with natural language date parsing, smart voice reminders, and drag-and-drop task sorting.',
         techStack: ['/textures/gallery/reactlogo.webp', '/textures/gallery/jslogo.webp', '/textures/gallery/csslogo.webp']
     }
 ];
 
-const PROJECT_COUNT = 5; // 5 flagship projects in sequence
+const PROJECT_COUNT = 4; // 4 projects in sequence
 const GAP = 2.5;
 
 // Zmień te wartości aby dopasować proporcje ptaka (legacy ratio 1.41)
@@ -123,10 +126,10 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
 
     // Setup Paint Transition
     const { onBeforeCompile, animatePaint, resetPaint, uniformsData, updateRoomOrigin } = usePaintMaterial();
-    
+
     // Track transition state to disable interactions
     const [isTransitioning, setIsTransitioning] = useState(false);
-    
+
     // Track if user teleported into this room 
     const wasTeleportedRef = useRef(false);
     useEffect(() => {
@@ -146,7 +149,7 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
                 resetPaint();
                 // Start the paint animation with a slight delay so it happens *during* fly-in
                 animatePaint(0.2, 2.5);
-                
+
                 // Re-enable interactions once painting finishes
                 setTimeout(() => {
                     setIsTransitioning(false);
@@ -254,7 +257,7 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
             return `/textures/gallery/${name}_painted.webp`;
         });
     }, [canHover]);
-    
+
     useTexture(allLogos);
 
     // Construct the full list of projects (repeated) with textures attached
@@ -292,6 +295,11 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
 
             return {
                 ...projectData,
+                color: projectData.color || (
+                    projectData.id === 'annapoorna' ? '#10b981' :
+                        projectData.id === 'nova-ai' ? '#00d9ff' :
+                            projectData.id === 'portfolio-website' ? '#a855f7' : '#f59e0b'
+                ),
                 index: i,
                 frontTexture: frontTex,
                 paintedTexture: (paintedTex !== frontTex && canHover) ? paintedTex : null,
@@ -399,7 +407,7 @@ const GalleryRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
         floorMat.onBeforeCompile = onBeforeCompile;
         floorMat.transparent = true;
         floorMat.needsUpdate = true;
-        
+
         const ropeMat = new THREE.MeshBasicMaterial({ color: '#666666' });
         ropeMat.onBeforeCompile = onBeforeCompile;
         ropeMat.transparent = true;
@@ -708,6 +716,11 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
     const detailsTextRef2 = useRef();
     const techTextRef = useRef();
     const openTextRef = useRef();
+    const frontGroupRef = useRef();
+    const categoryTextRef = useRef();
+    const frontBadgeRef = useRef();
+    const frontDescRef = useRef();
+    const hintTextRef = useRef();
     const [hovered, setHovered] = useState(false);
     const [btnHovered, setBtnHovered] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);  // True ONLY during flip animation
@@ -730,6 +743,25 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
         }
     };
 
+    // Color transition when card is selected
+    useEffect(() => {
+        const mat = materialRef.current?.material || materialRef.current;
+        if (!mat || !mat.color) return;
+
+        const targetColor = isSelected
+            ? new THREE.Color(project.color || '#00d9ff')
+            : new THREE.Color('#ffffff');
+
+        gsap.to(mat.color, {
+            r: targetColor.r,
+            g: targetColor.g,
+            b: targetColor.b,
+            duration: 0.5,
+            ease: 'power2.out',
+            overwrite: 'auto'
+        });
+    }, [isSelected, project.color]);
+
     useImperativeHandle(ref, () => ({
         closeCard: () => {
             return new Promise((resolve) => {
@@ -746,6 +778,19 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                             gsap.to(materialRef.current, {
                                 uProgress: 0.0,
                                 duration: 0.5,
+                                ease: 'power2.out',
+                                overwrite: 'auto'
+                            });
+                        }
+
+                        // Revert color to white when unselected
+                        const mat = materialRef.current?.material || materialRef.current;
+                        if (mat && mat.color) {
+                            gsap.to(mat.color, {
+                                r: 1,
+                                g: 1,
+                                b: 1,
+                                duration: 0.4,
                                 ease: 'power2.out',
                                 overwrite: 'auto'
                             });
@@ -872,6 +917,20 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                                 overwrite: 'auto'
                             });
                         }
+
+                        // Animate card color to project color when opened
+                        const mat = materialRef.current?.material || materialRef.current;
+                        if (mat && mat.color) {
+                            const targetColor = new THREE.Color(project.color || '#00d9ff');
+                            gsap.to(mat.color, {
+                                r: targetColor.r,
+                                g: targetColor.g,
+                                b: targetColor.b,
+                                duration: 0.5,
+                                ease: 'power2.out',
+                                overwrite: 'auto'
+                            });
+                        }
                     }
 
                     timeline.to(paperRef.current.position, {
@@ -960,7 +1019,7 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
             const p = paintProgress.value;
             // Instantly reveal if we teleported
             const expectedOpacity = p >= 1.0 ? 1.0 : THREE.MathUtils.clamp((p - 0.3) * 2.0, 0.0, 1.0);
-            
+
             if (textRef.current.fillOpacity !== expectedOpacity) {
                 const applyOpacity = (ref) => {
                     if (ref.current) {
@@ -972,6 +1031,10 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                     }
                 };
                 applyOpacity(textRef);
+                applyOpacity(categoryTextRef);
+                applyOpacity(frontBadgeRef);
+                applyOpacity(frontDescRef);
+                applyOpacity(hintTextRef);
                 applyOpacity(detailsTextRef1);
                 applyOpacity(detailsTextRef2);
                 applyOpacity(techTextRef);
@@ -979,9 +1042,9 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
             }
         }
 
-        // --- Zrównaj pozycję tekstu Z z animacją zaginania i falowania kartki (PRZÓD) ---
-        if (textRef.current && materialRef.current) {
-            const y = textRef.current.position.y;
+        // --- Zrównaj pozycję tekstu i frontu Z z animacją zaginania i falowania kartki (PRZÓD) ---
+        if (frontGroupRef.current && materialRef.current) {
+            const y = frontGroupRef.current.position.y;
             const uBend = materialRef.current.bend;
             const uWindStrength = materialRef.current.windStrength || 0;
             const uTime = state.clock.getElapsedTime();
@@ -990,11 +1053,11 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
             const totalWind = 0.02 + uWindStrength;
             const flutter = Math.sin(uTime * 2.0 + y * 2.0) * totalWind * (1.0 + Math.abs(uBend * 3.0));
 
-            textRef.current.position.z = bendAmount + flutter + 0.02;
+            frontGroupRef.current.position.z = bendAmount + flutter + 0.015;
 
-            // Obrót tekstu by przylegał do krzywizny (pochodna dz/dy)
+            // Obrót frontu by przylegał do krzywizny (pochodna dz/dy)
             const dz_dy = 2.0 * y * uBend + 2.0 * Math.cos(uTime * 2.0 + y * 2.0) * totalWind * (1.0 + Math.abs(uBend * 3.0));
-            textRef.current.rotation.x = Math.atan(dz_dy);
+            frontGroupRef.current.rotation.x = Math.atan(dz_dy);
         }
 
         // --- Zrównaj pozycję przycisku Z z animacją pleców (TYŁ) ---
@@ -1140,7 +1203,7 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                     <planeGeometry args={[1.5, 2, 16, 16]} />
                     <PaperMaterial
                         ref={materialRef}
-                        color="#ffffff"
+                        color={isSelected ? (project.color || '#00d9ff') : '#ffffff'}
                         map={project.frontTexture}
                         mapBack={project.backTexture}
                         mapPainted={project.paintedTexture}
@@ -1150,6 +1213,17 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                         roomOrigin={roomOrigin}
                     />
                 </mesh>
+
+                {/* Accent colored backdrop when card is selected */}
+                {isSelected && (
+                    <mesh position={[0, 0, -0.002]}>
+                        <planeGeometry args={[1.54, 2.04]} />
+                        <meshBasicMaterial
+                            color={project.color || '#00d9ff'}
+                            side={THREE.DoubleSide}
+                        />
+                    </mesh>
+                )}
 
                 {/* === PRZYCISK: OPEN NA PLECACH KARTKI === */}
                 <group
@@ -1167,18 +1241,18 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                         />
                     </mesh>
 
-                    {/* Warstwa 2: Napis OPEN PROJECT (bez eventów) */}
+                    {/* Warstwa 2: Napis OPEN LIVE PROJECT (bez eventów) */}
                     <Text
                         ref={openTextRef}
                         position={[0, 0, 0.01]}
-                        fontSize={0.11}
+                        fontSize={0.095}
                         color={btnHovered ? "#333333" : "#1c1c1c"}
                         font="/fonts/CabinSketch-Bold.ttf"
                         anchorX="center"
                         anchorY="middle"
                         fillOpacity={0} // Start hidden
                     >
-                        OPEN PROJECT
+                        OPEN LIVE PROJECT
                     </Text>
 
                     {/* Warstwa 3: Niewidoczny hit-area pokrywający cały przycisk - łapie WSZYSTKIE eventy */}
@@ -1187,7 +1261,10 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                         onClick={(e) => {
                             if (isSelected && !isTransitioning) {
                                 e.stopPropagation();
-                                window.open(project.url, '_blank');
+                                const targetUrl = project.liveUrl || project.url;
+                                if (targetUrl) {
+                                    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+                                }
                             }
                         }}
                         onPointerEnter={(e) => {
@@ -1217,7 +1294,7 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                     <Text
                         ref={detailsTextRef1}
                         position={[0, 0.28, 0.01]} // Względem środka detailsGroupRef, wyżej
-                        fontSize={0.10}
+                        fontSize={0.085}
                         color="#1c1c1c"
                         font="/fonts/CabinSketch-Bold.ttf"
                         anchorX="center"
@@ -1229,18 +1306,19 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
 
                     <Text
                         ref={detailsTextRef2}
-                        position={[0, 0.2, 0.01]} // Poniżej nagłówka
-                        fontSize={0.06}
+                        position={[0, 0.20, 0.01]} // Poniżej nagłówka
+                        fontSize={0.052}
                         color="#333333"
                         font="/fonts/CabinSketch-Bold.ttf"
                         anchorX="center"
                         anchorY="top"
-                        maxWidth={1.1} // Maksymalna szerokość zanim zacznie łamać linie
-                        lineHeight={1.4}
+                        maxWidth={1.08} // Fits comfortably inside the card container
+                        maxLines={4}
+                        lineHeight={1.35}
                         textAlign="center"
                         fillOpacity={0} // Start hidden
                     >
-                        {project.description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."}
+                        {project.description || ""}
                     </Text>
                 </group>
 
@@ -1278,31 +1356,104 @@ const ProjectCard = memo(forwardRef(({ index, project, clothespinTexture, curren
                     </group>
                 </group>
 
-                {/* 
-                  === TEKST / TYTUŁY PROJEKTÓW ===
-                  Tu możesz łatwo dostosować wygląd każdego napisu.
-                  
-                  position: [X, Y, Z] 
-                  > X to lewo/prawo (0 to środek)
-                  > Y to góra/dół (np. 0.75 to góra kartki, -0.75 dół)
-                  > Z nie ruszać. Skrypt powyżej sam wylicza Z, żeby napis zginał się i przyklejał do fali kartki!
-                  
-                  fontSize: rozmiar fontu (domyślnie 0.15)
-                  color: kolor napisu
-                  font: opcjonalnie dajesz tu inną czcionkę z folderu /public/fonts/
-                */}
-                <Text
-                    ref={textRef}
-                    position={[0, 0.7, 0]} // Tylko dwa pierwsze parametry [X, Y] mają tutaj znaczenie
-                    fontSize={0.20}
-                    color="#1c1c1c"
-                    font="/fonts/CabinSketch-Bold.ttf"
-                    anchorX="center"
-                    anchorY="middle"
-                    fillOpacity={0} // Start hidden
-                >
-                    {project.title}
-                </Text>
+                {/* === FRONT OF CARD: CLEAN TACTILE COLOUR CARD (NO CARTOON IMAGES) === */}
+                <group ref={frontGroupRef} position={[0, 0, 0]}>
+                    {/* Category pill */}
+                    <Text
+                        ref={categoryTextRef}
+                        position={[0, 0.78, 0.01]}
+                        fontSize={0.06}
+                        color={project.color || '#00d9ff'}
+                        font="/fonts/CabinSketch-Bold.ttf"
+                        anchorX="center"
+                        anchorY="middle"
+                        fillOpacity={0}
+                    >
+                        {project.category || 'FEATURED PROJECT'}
+                    </Text>
+
+                    {/* Project Title */}
+                    <Text
+                        ref={textRef}
+                        position={[0, 0.56, 0.01]}
+                        fontSize={0.092}
+                        maxWidth={1.22}
+                        lineHeight={1.15}
+                        textAlign="center"
+                        color="#1c1c1c"
+                        font="/fonts/CabinSketch-Bold.ttf"
+                        anchorX="center"
+                        anchorY="middle"
+                        fillOpacity={0}
+                    >
+                        {project.title}
+                    </Text>
+
+                    {/* Tactile Colored Brick / Card Preview on Front */}
+                    <group position={[0, 0.02, 0.01]}>
+                        <mesh position={[0, 0, 0]}>
+                            <planeGeometry args={[1.2, 0.68]} />
+                            <meshBasicMaterial 
+                                color={project.color || '#00d9ff'} 
+                                transparent 
+                                opacity={hovered ? 0.35 : 0.22} 
+                            />
+                        </mesh>
+                        <mesh position={[0, 0, 0.002]}>
+                            <planeGeometry args={[1.16, 0.64]} />
+                            <meshBasicMaterial 
+                                color="#ffffff" 
+                                transparent 
+                                opacity={0.82} 
+                            />
+                        </mesh>
+                        <Text
+                            ref={frontBadgeRef}
+                            position={[0, 0.15, 0.005]}
+                            fontSize={0.068}
+                            color={project.color || '#00d9ff'}
+                            font="/fonts/CabinSketch-Bold.ttf"
+                            anchorX="center"
+                            anchorY="middle"
+                            fillOpacity={0}
+                        >
+                            {project.id === 'annapoorna' ? 'SPRING BOOT · LEAFLET MAP' :
+                             project.id === 'nova-ai' ? 'REACT · VOICE & SPEECH AI' :
+                             project.id === 'portfolio-website' ? '3D THREE.JS & FIGMA UI/UX' :
+                             'CHRONO NLP · LOCAL PRIVACY'}
+                        </Text>
+                        <Text
+                            ref={frontDescRef}
+                            position={[0, -0.06, 0.005]}
+                            fontSize={0.046}
+                            maxWidth={1.08}
+                            maxLines={3}
+                            lineHeight={1.25}
+                            textAlign="center"
+                            color="#333333"
+                            font="/fonts/CabinSketch-Bold.ttf"
+                            anchorX="center"
+                            anchorY="middle"
+                            fillOpacity={0}
+                        >
+                            {project.description}
+                        </Text>
+                    </group>
+
+                    {/* Flip & Inspect Hint */}
+                    <Text
+                        ref={hintTextRef}
+                        position={[0, -0.68, 0.01]}
+                        fontSize={0.06}
+                        color={hovered ? (project.color || '#00d9ff') : '#555555'}
+                        font="/fonts/CabinSketch-Bold.ttf"
+                        anchorX="center"
+                        anchorY="middle"
+                        fillOpacity={0}
+                    >
+                        [ CLICK TO FLIP & INSPECT ]
+                    </Text>
+                </group>
 
                 <PositionalAudio
                     ref={paperAudioRef}

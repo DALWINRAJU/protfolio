@@ -116,17 +116,17 @@ const CorridorSegment = ({
                 zClip={zClip}
             />
 
-            {/* === SHAN.DEV BRAND SIGN ON SIDE WALL === */}
+            {/* === DALWIN.DEV BRAND SIGN ON SIDE WALL === */}
             <Text
                 position={[-3.46, 0.4, zOffset - 8]}
                 rotation={[0, Math.PI / 2, 0]}
-                fontSize={0.32}
+                fontSize={0.28}
                 color="#1a1a1a"
                 anchorX="center"
                 anchorY="middle"
                 font="/fonts/CabinSketch-Bold.ttf"
             >
-                SHAN.DEV
+                DALWIN.DEV
             </Text>
 
             {/* === WELCOME AREA (Start of segment) - MOVED CLOSER === */}

@@ -7,23 +7,23 @@ gsap.registerPlugin(ScrollTrigger);
 const pillars = [
   {
     num: "01",
-    title: "Immersive Experiences",
-    desc: "Blending storytelling, animation, 3D graphics, and motion design to craft memorable web applications inspired by Apple, Stripe, Linear, and Awwwards leaders."
+    title: "Human-Centered Design",
+    desc: "Starting every project with user research, wireframing, and high-fidelity Figma prototypes — translating design thinking into clean, accessible, and delightful frontend interfaces."
   },
   {
     num: "02",
-    title: "Full Stack Architecture",
-    desc: "Engineering scalable backend APIs, database schemas, and cloud deployment pipelines using React, Next.js, Node.js, Express, Supabase, and PostgreSQL."
+    title: "Full-Stack Engineering",
+    desc: "Building scalable backend REST APIs with Spring Boot and Java, connecting them to responsive React.js frontends with relational MySQL databases and real-time map integrations."
   },
   {
     num: "03",
-    title: "Creative Engineering",
-    desc: "Pushing spatial web boundaries through WebGL 3D viewports, Three.js shaders, Lenis smooth scrolling, and frame-accurate GSAP scrollytelling physics."
+    title: "Voice AI & Smart Interfaces",
+    desc: "Integrating Web Speech API, NLP capabilities, and natural language date parsing (chrono-node) to build hands-free, intelligent voice-driven web applications."
   },
   {
     num: "04",
-    title: "Craftsmanship & Detail",
-    desc: "Prioritizing zero cumulative layout shifts, sub-second global response times, strict WCAG accessibility compliance, and editorial dark mode aesthetics."
+    title: "Real-World Impact",
+    desc: "Shipping production-ready applications that solve genuine problems — from reducing food waste with map-based donation platforms to streamlining tasks with AI-powered voice productivity tools."
   }
 ];
 

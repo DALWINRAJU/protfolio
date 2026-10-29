@@ -43,111 +43,150 @@ export const PLATFORM_CONFIG = {
 };
 
 const RAW_CONTENT_DATA = [
-    // ============ Case Studies / Projects ============
+    // ============ Internships & Experience ============
     {
-        id: 'studio-apple-vision-pro',
+        id: 'studio-vydctc-internship',
         platform: 'blog',
-        title: 'Apple Vision Pro: Spatial Web Architecture & 3D Canvas Rendering',
-        description: 'Building a spatial computing product showcase with frame-by-frame 3D canvas interaction, luxury depth glass shaders, and physics-driven scroll mechanics.',
-        frontTexture: '/textures/studio/monitorfront_postnafbdoublewinner.webp',
-        paintedFrontTexture: '/textures/studio/monitorfront_postnafbdoublewinner_painted.webp',
+        badge: 'INTERNSHIP',
+        floatingName: 'VYDCTC INTERNSHIP',
+        color: '#00D9FF',
+        baseColor: '#eef8fa',
+        title: 'Software Development Intern — VYDCTC India Pvt Ltd',
+        description: 'Collaborated with a cross-functional development team across the full SDLC. Strengthened debugging, code review, and Agile workflows under mentor guidance.',
+        frontTexture: null,
+        paintedFrontTexture: null,
         thumbnail: null,
-        url: '#project/apple-vision-pro',
-        date: '2026-03-24',
-        readTime: '8 min',
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: '1 Month',
+        readTime: 'SDLC & Agile',
     },
+    // ============ Research & International Conclave ============
     {
-        id: 'studio-bmw-m4-gt3',
+        id: 'studio-conclave-research',
         platform: 'blog',
-        title: 'BMW M4 GT3 EVO: Web Audio Synthesis & 360° Canvas Animation',
-        description: 'Engineering a flagship digital showcase with multi-threaded pre-buffered image scrubbers, real-time telemetry HUD displays, and Web Audio doppler pitch shifts.',
-        frontTexture: '/textures/studio/tvfront_filmikprojektdlamultiego.webp',
-        paintedFrontTexture: '/textures/studio/tvfront_filmikprojektdlamultiego_painted.webp',
+        badge: 'RESEARCH PAPER',
+        floatingName: "INT'L CONCLAVE RESEARCH",
+        color: '#A855F7',
+        baseColor: '#f7f2fc',
+        title: 'International Conclave Research Paper Presentation',
+        description: 'Successfully presented a research paper at the International Conclave conducted by Tamil Nadu Dr. Ambedkar Law University in collaboration with Anna University, Chennai.',
+        frontTexture: null,
+        paintedFrontTexture: null,
         thumbnail: null,
-        url: '#project/bmw-m4-gt3',
-        date: '2026-02-15',
-        readTime: '7 min',
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: 'International',
+        readTime: 'Conclave',
     },
+    // ============ 1st Prize Paper Presentation ============
     {
-        id: 'studio-luxury-tailor',
+        id: 'studio-prize-thanjavur',
+        platform: 'youtube',
+        badge: '1ST PRIZE',
+        floatingName: '1ST PRIZE PAPER PRESENTATION',
+        color: '#F59E0B',
+        baseColor: '#fef8ee',
+        title: '1st Prize Paper Presentation — Thanjavur Govt College',
+        description: 'Secured 1st Prize for innovative technical paper presentation at Thanjavur Government College Symposium among top state-wide engineering college teams.',
+        frontTexture: null,
+        paintedFrontTexture: null,
+        thumbnail: null,
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: 'Winner',
+        readTime: 'Symposium',
+    },
+    // ============ 1st Prize Intra Hackathon ============
+    {
+        id: 'studio-prize-hackathon',
         platform: 'blog',
-        title: 'Luxury Tailor Atelier: Bespoke WebGL Fabric Physics & Editorial UI',
-        description: 'Translating haute couture craftsmanship into digital form with custom WebGL fabric warp shaders, editorial serif typography, and zero layout shift.',
-        frontTexture: '/textures/studio/tvfront_filmikedytowaniezdjec.webp',
-        paintedFrontTexture: '/textures/studio/tvfront_filmikedytowaniezdjec_painted.webp',
+        badge: '1ST PRIZE',
+        floatingName: '1ST PRIZE INTRA HACKATHON',
+        color: '#10B981',
+        baseColor: '#edfbf5',
+        title: '1st Prize Winner — Intra Hackathon, GCE Srirangam',
+        description: 'Won 1st Prize in Intra Hackathon at Government College of Engineering, Srirangam, building real-world software solutions under strict competition deadlines.',
+        frontTexture: null,
+        paintedFrontTexture: null,
         thumbnail: null,
-        url: '#project/luxury-tailor',
-        date: '2026-01-10',
-        readTime: '9 min',
+        url: 'https://github.com/DALWINRAJU',
+        date: 'Champion',
+        readTime: 'Hackathon',
     },
+    // ============ Symposium Prizes & Knowledge Battle ============
     {
-        id: 'studio-jewellery-ecommerce',
-        platform: 'linkedin',
-        title: 'Fashion Jewellery Ecommerce: Sub-Second Faceted Edge Filtering',
-        description: 'Detailed analysis of Supabase PostgreSQL relational schemas, Cloudinary dynamic image pipelines, and Next.js optimistic cart state sync.',
-        thumbnail: null,
-        url: '#project/fashion-jewellery-ecommerce',
-        date: '2025-12-18',
-        readTime: '6 min',
-    },
-    {
-        id: 'studio-photography-platform',
-        platform: 'blog',
-        title: 'Photography Accessories: Relational Compatibility Matrix Engine',
-        description: 'Building an interactive lens compatibility matrix backed by Express.js REST APIs, indexed database queries, and tactile dark room UI design.',
-        thumbnail: null,
-        url: '#project/photography-accessories-platform',
-        date: '2025-11-28',
-        readTime: '7 min',
-    },
-    {
-        id: 'studio-micro-interaction',
+        id: 'studio-symposium-prizes',
         platform: 'tiktok',
-        title: 'Designing Fluid Micro-Interactions in GSAP & Framer Motion',
-        description: 'Creative engineering POV: Making static interfaces feel alive and responsive with spring physics curves and custom cursor magnetic triggers.',
-        frontTexture: '/textures/studio/phonefront_followmeontiktok.webp',
-        paintedFrontTexture: '/textures/studio/phonefront_followmeontiktok_painted.webp',
+        badge: 'PRIZES & HONORS',
+        floatingName: 'SYMPOSIUM PRIZES & BATTLE',
+        color: '#F43F5E',
+        baseColor: '#fff1f2',
+        title: 'State Symposium Prizes — Kalasalingam & Dharmapuri',
+        description: '2nd Prize Paper Presentation at Kalasalingam University; 3rd Prize Paper Presentation & 2nd Prize Knowledge Battle at Dharmapuri GCE; Delegate in Erode & Coimbatore.',
+        frontTexture: null,
+        paintedFrontTexture: null,
         thumbnail: null,
-        url: '#',
-        date: '2026-03-01',
-        views: '5.2K',
-        likes: '840',
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: 'Multi-Prize',
+        views: '4 Awards',
+        likes: 'Statewide',
     },
+    // ============ Real-World Software Delivery ============
     {
-        id: 'studio-perf',
+        id: 'studio-achievements-delivery',
         platform: 'blog',
-        title: 'Core Web Vitals & WebGL 60FPS Optimization Checklist',
-        description: 'Step-by-step checklist to sustain 60fps WebGL canvas updates and achieve 100/100 Lighthouse scores on heavy interactive portfolio sites.',
+        badge: 'ACHIEVEMENT',
+        floatingName: 'SHIPPED REAL-WORLD APPS',
+        color: '#3B82F6',
+        baseColor: '#eff6ff',
+        title: 'Designed, Developed & Deployed Production Web Apps',
+        description: 'Built and deployed multiple production-grade web applications to faculty and peers, including full-stack map platforms, voice AI assistants, and productivity suites.',
+        frontTexture: null,
+        paintedFrontTexture: null,
         thumbnail: null,
-        url: '#',
-        date: '2025-10-15',
-        readTime: '10 min',
+        url: 'https://github.com/DALWINRAJU',
+        date: 'Production',
+        readTime: 'Full-Stack',
+    },
+    // ============ Certifications ============
+    {
+        id: 'studio-certifications',
+        platform: 'blog',
+        badge: 'CERTIFICATIONS',
+        floatingName: 'ORACLE & GUVI CERTIFIED',
+        color: '#8B5CF6',
+        baseColor: '#f5f3ff',
+        title: 'Oracle Certified Java & Codenatives Full Stack Developer',
+        description: 'Oracle Certified Java Programming • Java Full Stack Development (Codenatives) • UI/UX Design (Internpe) • Generative AI (Guvi) certification credentials.',
+        frontTexture: null,
+        paintedFrontTexture: null,
+        thumbnail: null,
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: 'Credentials',
+        readTime: '4 Certs',
+    },
+    // ============ UI/UX Design ============
+    {
+        id: 'studio-ui-ux-design',
+        platform: 'youtube',
+        badge: 'UI/UX DESIGN',
+        floatingName: 'UI/UX DESIGN & FIGMA',
+        color: '#FB923C',
+        baseColor: '#fff7ed',
+        title: 'UI/UX Design Fundamentals — Wireframing & Prototyping',
+        description: 'Combining wireframing, interactive prototyping in Figma, user research, user flows, and visual design fundamentals with scalable full-stack code.',
+        frontTexture: null,
+        paintedFrontTexture: null,
+        thumbnail: null,
+        url: 'https://www.linkedin.com/in/dalwinraju-r/',
+        date: 'Internpe',
+        readTime: 'Design Thinking',
     },
 ];
-
-const ytTextures = ['/textures/studio/tvfront_filmikprojektdlamultiego.webp', '/textures/studio/tvfront_filmikedytowaniezdjec.webp'];
-const ytPaintedTextures = ['/textures/studio/tvfront_filmikprojektdlamultiego_painted.webp', '/textures/studio/tvfront_filmikedytowaniezdjec_painted.webp'];
-const blogTextures = ['/textures/studio/monitorfront_postnafbdoublewinner.webp'];
-const blogPaintedTextures = ['/textures/studio/monitorfront_postnafbdoublewinner_painted.webp'];
-const ttTextures = ['/textures/studio/phonefront_followmeontiktok.webp'];
-const ttPaintedTextures = ['/textures/studio/phonefront_followmeontiktok_painted.webp'];
-
-let ytIdx = 0, blogIdx = 0, ttIdx = 0;
-let ytPIdx = 0, blogPIdx = 0, ttPIdx = 0;
 
 export const CONTENT_DATA = RAW_CONTENT_DATA.map((item) => {
     return {
         ...item,
-        frontTexture: item.frontTexture || (
-            item.platform === 'youtube' ? ytTextures[ytIdx++ % ytTextures.length] :
-                item.platform === 'blog' ? blogTextures[blogIdx++ % blogTextures.length] :
-                    ttTextures[ttIdx++ % ttTextures.length]
-        ),
-        paintedFrontTexture: item.paintedFrontTexture || (
-            item.platform === 'youtube' ? ytPaintedTextures[ytPIdx++ % ytPaintedTextures.length] :
-                item.platform === 'blog' ? blogPaintedTextures[blogPIdx++ % blogPaintedTextures.length] :
-                    ttPaintedTextures[ttPIdx++ % ttPaintedTextures.length]
-        )
+        frontTexture: item.frontTexture || null,
+        paintedFrontTexture: item.paintedFrontTexture || null
     };
 });
 

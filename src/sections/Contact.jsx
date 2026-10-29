@@ -45,7 +45,7 @@ export default function Contact() {
   }, []);
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('contact@shan.dev');
+    navigator.clipboard.writeText('dalwinraju2006@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -96,7 +96,7 @@ export default function Contact() {
               }}
             >
               <span className="pulse-dot" style={{ width: '8px', height: '8px', backgroundColor: 'var(--accent-primary)', borderRadius: '50%', display: 'inline-block' }}></span>
-              Open for select projects & full stack commissions
+              Open for Software Developer & UI/UX Roles
             </div>
 
             <p
@@ -120,8 +120,8 @@ export default function Contact() {
                 marginBottom: '24px'
               }}
             >
-              Let's Build Something<br />
-              <span className="text-gradient-purple">People Remember.</span>
+              Let's Connect &<br />
+              <span className="text-gradient-purple">Build Great Software.</span>
             </h2>
             <p
               style={{
@@ -133,10 +133,10 @@ export default function Contact() {
                 maxWidth: '560px'
               }}
             >
-              Whether it's an immersive portfolio, premium product website, or scalable full stack application, I'm always excited to create meaningful digital experiences.
+              Seeking entry-level Software Developer, Frontend Developer, or UI/UX Designer roles. Reach out via email or phone to discuss projects and opportunities.
             </p>
 
-            {/* Direct Email Card with Copy Trigger */}
+            {/* Direct Email & Phone Card */}
             <div
               className="glass-panel"
               style={{
@@ -144,18 +144,56 @@ export default function Contact() {
                 marginBottom: '32px',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '8px',
+                gap: '16px',
                 position: 'relative'
               }}
             >
-              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600 }}>
-                Direct Email Inquiries
-              </span>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+              <div>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, display: 'block', marginBottom: '4px' }}>
+                  Direct Email Inquiries
+                </span>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+                  <a
+                    href="mailto:dalwinraju2006@gmail.com"
+                    style={{
+                      fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                      color: 'var(--text-primary)',
+                      fontFamily: 'var(--font-heading)',
+                      fontWeight: 600,
+                      letterSpacing: '0.5px'
+                    }}
+                    className="contact-email-link"
+                  >
+                    dalwinraju2006@gmail.com
+                  </a>
+                  <button
+                    onClick={handleCopyEmail}
+                    style={{
+                      fontSize: '0.8rem',
+                      padding: '6px 14px',
+                      borderRadius: 'var(--radius-sm)',
+                      border: '1px solid var(--border-primary)',
+                      backgroundColor: 'rgba(0, 217, 255, 0.1)',
+                      color: 'var(--accent-secondary)',
+                      fontWeight: 600,
+                      letterSpacing: '0.5px',
+                      transition: 'all var(--transition-fast)'
+                    }}
+                    className="copy-btn-hover"
+                  >
+                    {copied ? '✓ Copied' : 'Copy Email'}
+                  </button>
+                </div>
+              </div>
+
+              <div style={{ borderTop: '1px solid var(--border-primary)', paddingTop: '12px' }}>
+                <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, display: 'block', marginBottom: '4px' }}>
+                  Phone / Mobile
+                </span>
                 <a
-                  href="mailto:contact@shan.dev"
+                  href="tel:7598939521"
                   style={{
-                    fontSize: 'clamp(1.1rem, 2vw, 1.35rem)',
+                    fontSize: '1.1rem',
                     color: 'var(--text-primary)',
                     fontFamily: 'var(--font-heading)',
                     fontWeight: 600,
@@ -163,25 +201,8 @@ export default function Contact() {
                   }}
                   className="contact-email-link"
                 >
-                  contact@shan.dev
+                  +91 7598939521
                 </a>
-                <button
-                  onClick={handleCopyEmail}
-                  style={{
-                    fontSize: '0.8rem',
-                    padding: '6px 14px',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-primary)',
-                    backgroundColor: 'rgba(0, 217, 255, 0.1)',
-                    color: 'var(--accent-secondary)',
-                    fontWeight: 600,
-                    letterSpacing: '0.5px',
-                    transition: 'all var(--transition-fast)'
-                  }}
-                  className="copy-btn-hover"
-                >
-                  {copied ? '✓ Copied' : 'Copy Email'}
-                </button>
               </div>
             </div>
 
@@ -192,17 +213,17 @@ export default function Contact() {
                   Location
                 </span>
                 <span style={{ fontSize: '0.95rem', color: 'var(--text-primary)', fontWeight: 500 }}>
-                  India 🇮🇳 (UTC +5:30)
+                  Tamil Nadu, India 🇮🇳
                 </span>
               </div>
 
               <div>
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 600, display: 'block', marginBottom: '8px' }}>
-                  Socials & Networks
+                  Socials & Links
                 </span>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   <a
-                    href="https://github.com"
+                    href="https://github.com/DALWINRAJU"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}
@@ -212,7 +233,7 @@ export default function Contact() {
                     GitHub
                   </a>
                   <a
-                    href="https://linkedin.com"
+                    href="https://www.linkedin.com/in/dalwinraju-r/"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}
@@ -220,16 +241,6 @@ export default function Contact() {
                     aria-label="LinkedIn Profile"
                   >
                     LinkedIn
-                  </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '0.95rem', color: 'var(--text-secondary)' }}
-                    className="contact-item-hover"
-                    aria-label="Twitter Profile"
-                  >
-                    Twitter / X
                   </a>
                 </div>
               </div>

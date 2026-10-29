@@ -1,0 +1,78 @@
+DALWINRAJU R
+Software Developer | Frontend Developer | UI/UX Designer
+ [7598939521]  |  [dalwinraju2006@gmail.com]  |  LinkedIn: [linkedin.com/in/dalwinraju-r]  |  GitHub: [dalwin-git]  | Portfolio: [developer-gazette]
+Tamil Nadu, India.
+PROFESSIONAL SUMMARY
+Motivated Software Developer and Frontend Developer with hands-on experience building responsive, user-centered web applications using React.js, Java, and Spring Boot. Skilled in translating design concepts into clean, scalable code and combining strong UI/UX fundamentals — wireframing, prototyping, and user research — with full-stack development to deliver intuitive digital products. Proven ability to develop REST APIs, integrate databases, and ship real-world projects independently and in Agile teams. Fast learner with strong problem-solving skills, a keen eye for detail, and a passion for writing clean, maintainable code. Seeking an entry-level Software Developer, Frontend Developer, or UI/UX Designer role to apply strong technical and design skills to build impactful, scalable applications.
+TECHNICAL SKILLS
+Programming Languages: C, Java, JavaScript, Python, PHP
+Frontend Development: HTML5, CSS3, JavaScript, Bootstrap, React.js, Responsive Web Design
+Backend Development: Spring Boot, Node.js, REST API Development
+Database: MySQL
+UI/UX Design: Wireframing, Prototyping, User Research, Design Thinking, User Flow, Information Architecture, Visual Design, Interaction Design
+Tools & Platforms: Git, GitHub, VS Code, Eclipse, XAMPP, Jupyter Notebook, Figma
+Libraries: Leaflet.js, Bootstrap Icons
+Other Skills: Problem Solving, Team Collaboration, Agile Methodology, Version Control, API Integration
+PROJECTS
+Annapoorna – Food Sharing & Donation Platform	Spring Boot, Thymeleaf, Bootstrap, MySQL, Leaflet.js
+•	Developed a full-stack, map-based food donation platform using Spring Boot, Thymeleaf, Bootstrap, and MySQL to connect food donors with orphanages and elderly care homes.
+•	Integrated Leaflet.js and OpenStreetMap to build an interactive map enabling users to pin and discover nearby donation locations in real time.
+•	Implemented nearby-location recommendation logic to match donors with the closest recipients, streamlining the donation process.
+•	Built RESTful APIs and full CRUD functionality for managing donation listings, user profiles, and location data.
+•	Added image upload support for donation posts, improving transparency and user trust in the platform.
+•	Designed a fully responsive, mobile-friendly UI to ensure accessibility across devices.
+•	Applied location-based filtering to help users quickly find relevant donation opportunities, reducing food wastage through a smarter, more efficient donation workflow. - https://anapoorna-frontend.onrender.com/
+
+Nova AI – Intelligent Voice-Enabled Assistant	React.js, AI Integration, REST APIs
+•	Built an AI-powered virtual assistant using React.js with a modern, responsive interface for seamless user interaction.
+•	Integrated AI/NLP APIs to enable natural language understanding and intelligent, context-aware responses.
+•	Implemented voice input and voice-response support, allowing hands-free interaction and improving accessibility.
+•	Designed a clean, intuitive UI/UX focused on usability, fast response times, and smooth conversational flow.
+•	Structured reusable React components and integrated third-party APIs to ensure scalable, maintainable code.
+nova-xidg.vercel.app
+
+
+
+Portfolio Website – Personal Developer & UI/UX Portfolio	React.js, HTML5, CSS3
+•	Designed and developed a fully responsive personal portfolio website to showcase projects, technical skills, and UI/UX case studies.
+•	Created wireframes and high-fidelity prototypes in Figma prior to development, applying design thinking and user research principles.
+•	Built the site using React.js and modern CSS practices, optimizing for performance, accessibility, and cross-device responsiveness.
+•	Structured clean, component-based code to enable easy scalability and future feature additions.
+
+Aura — AI Voice Todo List                                                       HTML5  ·  CSS3  ·  Vanilla JavaScript  ·  Web Speech API  ·  chrono-node
+•	Built a premium, voice-enabled AI to-do list application featuring a glassmorphism UI for a modern, polished user experience. 
+•	Enabled task creation via typing or voice input, with natural language date parsing (e.g., "meeting tomorrow at 6 PM") to automatically schedule tasks. 
+•	Implemented smart voice reminders and browser notifications to keep users on track without manual scheduling. 
+•	Added drag-and-drop task sorting and a built-in calendar view for intuitive task organization and planning. 
+•	Architected the entire application to run client-side, ensuring fast performance and data privacy with no backend dependency.
+- https://ai-todo-rho-two.vercel.app/
+
+
+
+
+INTERNSHIP EXPERIENCE
+Software Development Intern — VYDCTC India Pvt Ltd	1 Month
+•	Collaborated with a cross-functional development team to design, build, and test real-world software features, gaining exposure to the complete Software Development Life Cycle (SDLC).
+•	Strengthened debugging and code review skills by identifying and resolving issues in existing codebases under mentor guidance.
+•	Participated in team stand-ups and project presentations, effectively communicating progress and technical solutions to stakeholders.
+•	Gained hands-on experience with Agile development practices, version control, and collaborative coding workflows.
+ACHIEVEMENTS
+•	Successfully designed, developed, and presented multiple real-world software projects to peers and faculty.
+•	Built and deployed several responsive, production-quality web applications, including a map-integrated donation platform.
+•	Continuously upskilling in React.js, Spring Boot, and UI/UX Design through self-directed learning and certification programs.
+•	Recognized for strong problem-solving ability and a user-centered approach to application design.
+COMPETITIONS & SYMPOSIUMS
+•	1st Prize, Paper Presentation — Thanjavur Government College Symposium
+•	2nd Prize, Paper Presentation — Kalasalingam University Symposium
+•	3rd Prize, Paper Presentation — Dharmapuri Government College Symposium
+•	2nd Prize, Knowledge Battle — Dharmapuri Government College Symposium
+•	Participant — Erode Symposium (Zinna) and Coimbatore Symposium
+SOFT SKILLS
+Communication, Leadership, Teamwork, Critical Thinking, Adaptability, Creativity, Time Management, Analytical Thinking
+EDUCATION
+Bachelor of Engineering – Computer Science and Engineering	Final Year
+Government College of Engineering, Srirangam, Tiruchirappalli, Tamil Nadu
+COMMUNITY INVOLVEMENT
+•	Active member of the Think Digital Community, engaging with a network of developers and designers.
+•	Regular attendee of Chennai Freelancer Meetups, networking with industry professionals and staying current on emerging technology and design trends.
+“Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.” — Albert Einst

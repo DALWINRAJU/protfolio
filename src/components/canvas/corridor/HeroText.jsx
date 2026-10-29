@@ -43,20 +43,22 @@ const HeroText = ({ position = [0, 0.3, 0] }) => {
     const floatY = useRef(0);
     const worldPosVec = useRef(new THREE.Vector3());
 
-    // Letter positions for SHAN split effect (4 letters)
+    // Letter positions for DALWIN split effect (6 letters)
     const letters = useMemo(() => [
-        { char: 'S', baseX: -0.9, splitDir: -1.8 },
-        { char: 'H', baseX: -0.3, splitDir: -0.6 },
-        { char: 'A', baseX: 0.3, splitDir: 0.6 },
-        { char: 'N', baseX: 0.9, splitDir: 1.8 },
+        { char: 'D', baseX: -1.25, splitDir: -2.0 },
+        { char: 'A', baseX: -0.75, splitDir: -1.2 },
+        { char: 'L', baseX: -0.25, splitDir: -0.4 },
+        { char: 'W', baseX: 0.25, splitDir: 0.4 },
+        { char: 'I', baseX: 0.75, splitDir: 1.2 },
+        { char: 'N', baseX: 1.25, splitDir: 2.0 },
     ], []);
 
     // Tagline words for split effect
     const taglineWords = useMemo(() => [
-        { text: 'Creative', baseX: -1.3, splitDir: -1.8 },
-        { text: 'Full Stack', baseX: -0.4, splitDir: -0.6 },
-        { text: 'Developer', baseX: 0.4, splitDir: 0.6 },
-        { text: 'Interactive', baseX: 1.3, splitDir: 1.8 },
+        { text: 'Software', baseX: -1.3, splitDir: -1.8 },
+        { text: 'Developer', baseX: -0.4, splitDir: -0.6 },
+        { text: 'Frontend', baseX: 0.4, splitDir: 0.6 },
+        { text: 'UI/UX Designer', baseX: 1.3, splitDir: 1.8 },
     ], []);
 
     // Animation loop

@@ -8,28 +8,28 @@ import { useScene } from '../context/SceneContext';
 const ROOM_META = {
     null: {
         path: '/',
-        title: 'Shan — Creative Full Stack Developer & Interactive Web Engineer',
-        description: 'Portfolio of Shan, Creative Full Stack Developer specializing in immersive digital experiences, scrollytelling, 3D web experiences, motion design, and scalable full stack architecture.',
+        title: 'Dalwinraju R — Software Developer | Frontend Developer | UI/UX Designer',
+        description: 'Portfolio of Dalwinraju R, motivated Software Developer and Frontend Developer specializing in React.js, Java, Spring Boot, MySQL, and UI/UX design.',
     },
     about: {
         path: '/about',
-        title: 'About — Shan Portfolio',
-        description: 'Learn about Shan — a Creative Full Stack Developer bridging design and development to build immersive digital experiences inspired by Apple, Stripe, and Linear.',
+        title: 'About — Dalwinraju R Portfolio',
+        description: 'Learn about Dalwinraju R — a Software Developer and UI/UX Designer bridging user-centered design concepts with clean, full-stack code.',
     },
     gallery: {
         path: '/gallery',
-        title: 'Gallery & Featured Work — Shan Portfolio',
-        description: 'Explore the flagship projects engineered by Shan, including Apple Vision Pro Interactive Experience, BMW M4 GT3 EVO Showcase, Luxury Tailor, and high-performance ecommerce platforms.',
+        title: 'Gallery & Featured Work — Dalwinraju R Portfolio',
+        description: 'Explore projects engineered by Dalwinraju R, including Annapoorna Food Donation Platform, Nova AI Assistant, Portfolio Website, and Aura AI Voice Todo.',
     },
     studio: {
         path: '/studio',
-        title: 'The Studio — Shan Portfolio',
-        description: 'Explore Shan\'s interactive 3D studio showcasing full stack engineering architecture, 3D web experiments, and high-performance UI systems.',
+        title: 'The Studio — Dalwinraju R Portfolio',
+        description: 'Explore Dalwinraju R\'s interactive showcase featuring full stack application architecture, voice AI implementations, and UI/UX case studies.',
     },
     contact: {
         path: '/contact',
-        title: 'Contact — Shan Portfolio',
-        description: 'Let\'s build something people remember. Get in touch with Shan for immersive web experiences and scalable full stack applications.',
+        title: 'Contact — Dalwinraju R Portfolio',
+        description: 'Get in touch with Dalwinraju R for Software Developer, Frontend Developer, and UI/UX Designer opportunities.',
     },
 };
 

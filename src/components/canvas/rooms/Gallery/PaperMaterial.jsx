@@ -10,7 +10,7 @@ import { useFrame } from '@react-three/fiber';
  * - uBend: Float. Controls the amount of bending along the vertical axis.
  * - uBendAxis: Vector2. Direction of bending (not yet implemented, defaults to Y-axis bend).
  */
-const PaperMaterial = forwardRef(({ color = '#fcf3c6', roughness = 0.6, map, side = THREE.DoubleSide, paintProgress, roomOrigin, ...props }, ref) => {
+const PaperMaterial = forwardRef(({ color = '#ffffff', roughness = 0.6, map, side = THREE.DoubleSide, paintProgress, roomOrigin, ...props }, ref) => {
     const materialRef = useRef();
 
     // Shader injection logic
@@ -197,6 +197,18 @@ const PaperMaterial = forwardRef(({ color = '#fcf3c6', roughness = 0.6, map, sid
         },
         get uProgress() {
             return materialRef.current?.userData?.shader?.uniforms.uProgress.value || 0;
+        },
+        get color() {
+            return materialRef.current?.color;
+        },
+        set color(val) {
+            if (materialRef.current?.color) {
+                if (val && val.isColor) {
+                    materialRef.current.color.copy(val);
+                } else {
+                    materialRef.current.color.set(val);
+                }
+            }
         },
         // We can also expose the raw material if needed
         material: materialRef.current

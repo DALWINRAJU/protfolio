@@ -6,37 +6,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 const highlightCards = [
   {
-    title: "Creative Development",
-    desc: "Blending real-time WebGL, GSAP physics, and custom canvas shaders to build bespoke, memorable digital worlds."
+    title: "Full-Stack Development",
+    desc: "Building responsive applications with React.js, Spring Boot, Java, Node.js, and RESTful API architecture."
   },
   {
-    title: "Full Stack Engineering",
-    desc: "Architecting robust backend services, Supabase & PostgreSQL database models, and scalable Node.js cloud APIs."
+    title: "UI/UX Design & Prototyping",
+    desc: "Combining wireframing, prototyping in Figma, user research, and design thinking with clean frontend code."
   },
   {
-    title: "Interactive Experiences",
-    desc: "Designing tactile micro-interactions, responsive 3D viewports, and scrollytelling mechanics that captivate users."
+    title: "Map & Proximity Integration",
+    desc: "Developing interactive spatial applications using Leaflet.js, OpenStreetMap, and location recommendation logic."
   },
   {
-    title: "Performance First",
-    desc: "Optimizing Core Web Vitals to sustain smooth 60FPS canvas animations and instantaneous edge hydration."
+    title: "Voice AI & Natural Language",
+    desc: "Integrating Web Speech API and NLP capabilities into voice-enabled virtual assistants and productivity apps."
   },
   {
-    title: "Modern Technologies",
-    desc: "Leveraging React, Next.js, TypeScript, Three.js, and modern cloud architecture for enduring technical quality."
+    title: "Database Management",
+    desc: "Designing and managing relational MySQL databases with full CRUD operations and structured data schemas."
   },
   {
-    title: "User-Centered Design",
-    desc: "Translating complex product requirements into clean, accessible, and human-centric visual interfaces."
+    title: "Agile & Collaborative Workflows",
+    desc: "Experienced in Git version control, SDLC best practices, team stand-ups, and cross-functional project delivery."
   }
 ];
 
 const stats = [
-  { value: "15+", label: "Projects Completed" },
-  { value: "18+", label: "Technologies Used" },
-  { value: "25+", label: "Interactive Experiences Built" },
-  { value: "1,500+", label: "GitHub Contributions" },
-  { value: "5+", label: "Years of Dedicated Learning" }
+  { value: "4+", label: "Real-World Web Apps" },
+  { value: "12+", label: "Technical Skills Mastered" },
+  { value: "1st", label: "Prize Paper Presentation" },
+  { value: "1", label: "Software Internship" },
+  { value: "B.E.", label: "CSE Final Year Student" }
 ];
 
 export default function About() {
@@ -144,7 +144,7 @@ export default function About() {
                 marginBottom: '16px'
               }}
             >
-              ABOUT SHAN // CREATIVE FULL STACK DEVELOPER
+              ABOUT DALWINRAJU R // SOFTWARE DEVELOPER & UI/UX DESIGNER
             </p>
 
             {/* 2. Large heading */}
@@ -156,8 +156,8 @@ export default function About() {
                 marginBottom: '28px'
               }}
             >
-              Building Immersive Digital Experiences.<br />
-              <span className="text-gradient-purple">Where Design, Motion, and Engineering Become One.</span>
+              Translating Design Concepts into Clean Code.<br />
+              <span className="text-gradient-purple">Where Full-Stack Engineering Meets Human-Centered UI/UX.</span>
             </h2>
 
             {/* 3. Premium Paragraphs */}
@@ -170,7 +170,7 @@ export default function About() {
                 fontWeight: 300
               }}
             >
-              I am Shan, a Creative Full Stack Developer based in India. I specialize in building immersive digital experiences rather than ordinary websites—combining visual storytelling, 3D WebGL viewports, and resilient backend architecture into unified web applications.
+              I am Dalwinraju R, a motivated Software Developer, Frontend Developer, and UI/UX Designer based in Tamil Nadu, India. Currently in my final year of Bachelor of Engineering in Computer Science and Engineering at Government College of Engineering, Srirangam.
             </p>
             <p
               style={{
@@ -181,7 +181,7 @@ export default function About() {
                 fontWeight: 300
               }}
             >
-              Drawing inspiration from Apple, Stripe, Linear, Framer, and Awwwards-winning standards, I write clean, intentional code engineered for fluidity and speed. From interactive canvas scenes to high-concurrency cloud APIs, every layer of my work is focused on precision and technical excellence.
+              I bring hands-on experience building responsive, user-centered web applications using React.js, Java, and Spring Boot. I specialize in combining strong UI/UX fundamentals — wireframing, prototyping in Figma, and user research — with full-stack development to deliver intuitive digital products.
             </p>
             <p
               style={{
@@ -192,7 +192,7 @@ export default function About() {
                 fontWeight: 300
               }}
             >
-              I bridge the gap between creative design and complex full stack engineering—ensuring interfaces feel alive, responsive, and uncompromisingly fast on every device.
+              With proven experience developing REST APIs, integrating relational databases, and shipping real-world projects independently and in Agile teams, I focus on writing clean, scalable, and maintainable code.
             </p>
 
             {/* 4. Personal Mission Statement */}
@@ -217,7 +217,7 @@ export default function About() {
                   marginBottom: '8px'
                 }}
               >
-                MISSION STATEMENT
+                QUOTE & INSPIRATION
               </span>
               <p
                 style={{
@@ -229,7 +229,7 @@ export default function About() {
                   fontWeight: 400
                 }}
               >
-                "My goal is to create digital experiences that are visually stunning, technically robust, and memorable. Every project should combine beautiful design, smooth interactions, scalable architecture, and exceptional user experience."
+                "Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution." — Albert Einstein
               </p>
             </div>
           </div>
@@ -300,6 +300,150 @@ export default function About() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Achieved Prizes & Recognitions Grid */}
+        <div style={{ marginBottom: '60px' }}>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: '24px',
+            borderBottom: '1px solid var(--border-primary)',
+            paddingBottom: '12px'
+          }}>
+            <h3 style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: '1.2rem',
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              letterSpacing: '0.5px',
+              textTransform: 'uppercase',
+              margin: 0
+            }}>
+              🏆 Achieved Prizes & Symposium Recognitions
+            </h3>
+            <span style={{
+              fontSize: '0.8rem',
+              color: 'var(--accent-primary)',
+              fontWeight: 600,
+              letterSpacing: '1px',
+              textTransform: 'uppercase'
+            }}>
+              State-Level & International
+            </span>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+            gap: '20px'
+          }}>
+            {[
+              {
+                badge: '1ST PRIZE',
+                badgeBg: 'rgba(0, 217, 255, 0.15)',
+                badgeColor: 'var(--accent-primary)',
+                title: 'Intra College Hackathon',
+                place: 'Government College of Engineering, Srirangam',
+                detail: 'Won 1st Prize in Intra Hackathon for developing full-stack problem-solving software under tight competition deadlines.'
+              },
+              {
+                badge: '1ST PRIZE',
+                badgeBg: 'rgba(0, 217, 255, 0.15)',
+                badgeColor: 'var(--accent-primary)',
+                title: 'Paper Presentation',
+                place: 'Thanjavur Government College Symposium',
+                detail: 'Secured 1st Prize for research-driven paper presentation among competitive engineering college delegates.'
+              },
+              {
+                badge: "INT'L CONCLAVE",
+                badgeBg: 'rgba(168, 85, 247, 0.15)',
+                badgeColor: '#c084fc',
+                title: 'Research Paper Presentation',
+                place: 'Tamil Nadu Dr. Ambedkar Law Univ & Anna University',
+                detail: 'Successfully presented research paper at international conclave conducted in collaboration with Anna University, Chennai.'
+              },
+              {
+                badge: '2ND PRIZE',
+                badgeBg: 'rgba(0, 217, 255, 0.12)',
+                badgeColor: 'var(--accent-secondary)',
+                title: 'Paper Presentation',
+                place: 'Kalasalingam University Symposium',
+                detail: 'Awarded 2nd Prize for comprehensive technical presentation and engineering architectural analysis.'
+              },
+              {
+                badge: '2ND PRIZE',
+                badgeBg: 'rgba(0, 217, 255, 0.12)',
+                badgeColor: 'var(--accent-secondary)',
+                title: 'Knowledge Battle',
+                place: 'Dharmapuri Government College Symposium',
+                detail: 'Secured 2nd Prize runner-up in high-intensity technical knowledge battle and algorithmic problem solving.'
+              },
+              {
+                badge: '3RD PRIZE',
+                badgeBg: 'rgba(255, 255, 255, 0.08)',
+                badgeColor: 'var(--text-secondary)',
+                title: 'Paper Presentation',
+                place: 'Dharmapuri Government College Symposium',
+                detail: 'Awarded 3rd Prize in state-level symposium paper presentation contest.'
+              }
+            ].map((prize, idx) => (
+              <div
+                key={idx}
+                className="glass-panel"
+                style={{
+                  padding: '22px',
+                  borderRadius: 'var(--radius-md)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '10px',
+                  border: '1px solid var(--border-primary)',
+                  backgroundColor: 'rgba(18, 18, 18, 0.6)',
+                  textAlign: 'left'
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 700,
+                    padding: '4px 10px',
+                    borderRadius: 'var(--radius-full)',
+                    backgroundColor: prize.badgeBg,
+                    color: prize.badgeColor,
+                    letterSpacing: '0.8px'
+                  }}>
+                    {prize.badge}
+                  </span>
+                </div>
+                <h4 style={{
+                  fontSize: '1.05rem',
+                  fontWeight: 600,
+                  color: 'var(--text-primary)',
+                  margin: 0
+                }}>
+                  {prize.title}
+                </h4>
+                <p style={{
+                  fontSize: '0.82rem',
+                  color: 'var(--accent-primary)',
+                  fontWeight: 500,
+                  margin: 0
+                }}>
+                  {prize.place}
+                </p>
+                <p style={{
+                  fontSize: '0.85rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.5,
+                  margin: 0,
+                  fontWeight: 300
+                }}>
+                  {prize.detail}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -374,7 +518,7 @@ export default function About() {
         >
           {/* Skills Summary Tag */}
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px' }}>
-            {['Full Stack Development', 'Creative Development', 'Interactive UI', 'Scrollytelling', '3D Web Experiences', 'Motion Design', 'Premium UI', 'Performance Optimization', 'Modern Web Architecture'].map(skill => (
+            {['React.js', 'Spring Boot', 'Java', 'JavaScript', 'MySQL', 'REST APIs', 'UI/UX Design', 'Wireframing', 'Figma', 'Leaflet.js', 'Bootstrap', 'Agile SDLC'].map(skill => (
               <span
                 key={skill}
                 style={{
@@ -403,7 +547,7 @@ export default function About() {
               letterSpacing: '0.5px'
             }}
           >
-            "I don't just build for the web — I shape how digital interactions feel."
+            "Building impactful, user-centered digital applications with clean, maintainable code."
           </p>
         </div>
       </div>

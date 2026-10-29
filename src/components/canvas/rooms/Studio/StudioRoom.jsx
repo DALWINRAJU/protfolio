@@ -598,208 +598,45 @@ const StudioRoom = ({ showRoom, onReady, isExiting, isWarmup }) => {
 };
 
 // ===========================================
-// MONITOR BLOCK COMPONENT - with Paint Reveal on Hover
-// Uses proven two-box approach: painted box behind + sketch box with revealMaterial in front
+// COLOUR BRICK COMPONENT - with Color Intensification on Hover
+// Solid tactile 3D brick with hand-drawn sketch wireframe and smooth GSAP color transition
 // ===========================================
 const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled, paintOnBeforeCompile, paintUniforms }) => {
-    // Position.y is updated directly by parent's useFrame via meshRef
-    const paintedBoxRef = useRef();
-    const hideDelayRef = useRef();
-    // RevealMaterial refs for each face (up to 6)
-    const matRef0 = useRef(); // +X right
-    const matRef1 = useRef(); // -X left
-    const matRef2 = useRef(); // +Y top
-    const matRef3 = useRef(); // -Y bottom
-    const matRef4 = useRef(); // +Z front
-    const matRef5 = useRef(); // -Z back
-    const matRefs = [matRef0, matRef1, matRef2, matRef3, matRef4, matRef5];
-
-    // Check device types (prioritize Sanity 'device' field, fallback to platform defaults)
-    const deviceShape = item.device || (PLATFORM_CONFIG[item.platform]?.shape) || 'monitor';
-    const isBlogMonitor = deviceShape === 'monitor';
-    const isTvMonitor = deviceShape === 'tv';
-    const isPhoneMonitor = deviceShape === 'phone';
-
-    // Determine the URL for the front texture (custom or default)
-    const frontTextureUrl = item.frontTexture || (
-        isBlogMonitor ? '/textures/studio/monitor_front.webp' :
-            isTvMonitor ? '/textures/studio/tv_front.webp' :
-                '/textures/studio/phone_front.webp'
-    );
-
-    // Dynamic Dummy texture for touch devices 
     const isTouch = isTouchDevice();
-    const dummyTex = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
-
-    // Determine painted front texture URL
-    const paintedFrontTextureUrl = isTouch ? dummyTex : (item.paintedFrontTexture || (
-        isBlogMonitor ? '/textures/studio/monitor_front_painted.webp' :
-            isTvMonitor ? '/textures/studio/tv_front_painted.webp' :
-                '/textures/studio/phone_front_painted.webp'
-    ));
-
-    // Load dynamic front texture
-    const frontTex = useLoader(TextureLoader, frontTextureUrl);
-    const frontPaintedTex = useLoader(TextureLoader, paintedFrontTextureUrl);
-
-    // Load Monitor textures (Blog) - shell + painted
-    const monitorBack = useLoader(TextureLoader, '/textures/studio/monitor_back.webp');
-    const monitorTop = useLoader(TextureLoader, '/textures/studio/monitor_top.webp');
-    const monitorBottom = useLoader(TextureLoader, '/textures/studio/monitor_bottom.webp');
-    const monitorLeft = useLoader(TextureLoader, '/textures/studio/monitor_left.webp');
-    const monitorRight = useLoader(TextureLoader, '/textures/studio/monitor_right.webp');
-    const monitorBackPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_back_painted.webp');
-    const monitorTopPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_top_painted.webp');
-    const monitorBottomPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_bottom_painted.webp');
-    const monitorLeftPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_left_painted.webp');
-    const monitorRightPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/monitor_right_painted.webp');
-
-    // Load TV textures (YouTube) - shell + painted
-    const tvBack = useLoader(TextureLoader, '/textures/studio/tv_back.webp');
-    const tvTop = useLoader(TextureLoader, '/textures/studio/tv_top.webp');
-    const tvBottom = useLoader(TextureLoader, '/textures/studio/tv_bottom.webp');
-    const tvSide = useLoader(TextureLoader, '/textures/studio/tv_side.webp');
-    const tvBackPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_back_painted.webp');
-    const tvTopPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_top_painted.webp');
-    const tvBottomPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_bottom_painted.webp');
-    const tvSidePainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/tv_side_painted.webp');
-
-    // Load Phone textures (TikTok) - shell + painted
-    const phoneBack = useLoader(TextureLoader, '/textures/studio/phone_back.webp');
-    const phoneSide = useLoader(TextureLoader, '/textures/studio/phone_side.webp');
-    const phoneBackPainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/phone_back_painted.webp');
-    const phoneSidePainted = useLoader(TextureLoader, isTouch ? dummyTex : '/textures/studio/phone_side_painted.webp');
-
-    // Build texture config for current device type
-    // Each entry: { sketch, painted } — if painted is null, that face won't have reveal
-    const faceConfig = useMemo(() => {
-        if (isBlogMonitor) {
-            return [
-                { sketch: monitorRight, painted: monitorRightPainted },    // +X
-                { sketch: monitorLeft, painted: monitorLeftPainted },      // -X
-                { sketch: monitorTop, painted: monitorTopPainted },        // +Y
-                { sketch: monitorBottom, painted: monitorBottomPainted },  // -Y
-                { sketch: frontTex, painted: frontPaintedTex },            // +Z front
-                { sketch: monitorBack, painted: monitorBackPainted },      // -Z
-            ];
-        } else if (isTvMonitor) {
-            return [
-                { sketch: tvSide, painted: tvSidePainted },       // +X
-                { sketch: tvSide, painted: tvSidePainted },       // -X
-                { sketch: tvTop, painted: tvTopPainted },          // +Y
-                { sketch: tvBottom, painted: tvBottomPainted },    // -Y
-                { sketch: frontTex, painted: frontPaintedTex },    // +Z front
-                { sketch: tvBack, painted: tvBackPainted },        // -Z
-            ];
-        } else if (isPhoneMonitor) {
-            return [
-                { sketch: phoneSide, painted: phoneSidePainted },  // +X
-                { sketch: phoneSide, painted: phoneSidePainted },  // -X
-                { sketch: phoneSide, painted: phoneSidePainted },  // +Y
-                { sketch: phoneSide, painted: phoneSidePainted },  // -Y
-                { sketch: frontTex, painted: frontPaintedTex },    // +Z front
-                { sketch: phoneBack, painted: phoneBackPainted },  // -Z
-            ];
-        }
-        return null;
-    }, [
-        isBlogMonitor, isTvMonitor, isPhoneMonitor,
-        frontTex, frontPaintedTex,
-        monitorBack, monitorTop, monitorBottom, monitorLeft, monitorRight,
-        monitorBackPainted, monitorTopPainted, monitorBottomPainted, monitorLeftPainted, monitorRightPainted,
-        tvBack, tvTop, tvBottom, tvSide,
-        tvBackPainted, tvTopPainted, tvBottomPainted, tvSidePainted,
-        phoneBack, phoneSide, phoneBackPainted, phoneSidePainted
-    ]);
-
-    // Painted materials for inner box (standard materials showing painted textures)
-    const paintedMaterials = useMemo(() => {
-        if (!faceConfig) return null;
-        return faceConfig.map(f => {
-            const mat = new THREE.MeshBasicMaterial({
-                color: '#fcf3c6',
-                map: f.painted || f.sketch // Use sketch as fallback if no painted version
-            });
-            // Apply paint transition shader
-            if (paintOnBeforeCompile) {
-                mat.onBeforeCompile = paintOnBeforeCompile;
-                mat.customProgramCacheKey = () => 'paintOnBeforeCompile_studio_painted';
-                mat.transparent = true;
-                mat.needsUpdate = true;
-            }
-            return mat;
-        });
-    }, [faceConfig, paintOnBeforeCompile]);
-
-    // Sketch materials for outer box (standard materials, used for faces WITHOUT reveal)
-    const sketchMaterials = useMemo(() => {
-        if (!faceConfig) return null;
-        return faceConfig.map(f => {
-            if (f.painted) return null; // Will use revealMaterial instead
-            const mat = new THREE.MeshBasicMaterial({ color: '#fcf3c6', map: f.sketch });
-            // Apply paint transition shader
-            if (paintOnBeforeCompile) {
-                mat.onBeforeCompile = paintOnBeforeCompile;
-                mat.customProgramCacheKey = () => 'paintOnBeforeCompile_studio_sketch';
-                mat.transparent = true;
-                mat.needsUpdate = true;
-            }
-            return mat;
-        });
-    }, [faceConfig, paintOnBeforeCompile]);
-
-    // --- HOVER STATE MANAGEMENT (NO REACT RE-RENDERS!) ---
     const isHoveredRef = useRef(false);
+    const brickMatRef = useRef();
 
-    const updatePaintState = useCallback(() => {
-        if (!faceConfig) return;
+    // Base color (idle state) and vibrant color (hover state)
+    const baseColorHex = item.baseColor || '#f4ede1';
+    const hoverColorHex = item.color || '#00D9FF';
 
-        const shouldPaint = !isTouch && (isHoveredRef.current || isSelected);
-        const targetProgress = shouldPaint ? 1.0 : 0.0;
-        const duration = shouldPaint ? 0.8 : 0.5;
-
-        // Animate each revealMaterial face
-        matRefs.forEach((ref) => {
-            if (ref.current) {
-                gsap.to(ref.current, {
-                    uProgress: targetProgress,
-                    duration,
-                    ease: 'power2.out',
-                    overwrite: true
-                });
-            }
+    // Color intensification handler on hover / select
+    const updateBrickColor = useCallback(() => {
+        if (!brickMatRef.current) return;
+        const shouldIntensify = !isTouch && (isHoveredRef.current || isSelected);
+        const targetColor = new THREE.Color(shouldIntensify ? hoverColorHex : baseColorHex);
+        
+        gsap.to(brickMatRef.current.color, {
+            r: targetColor.r,
+            g: targetColor.g,
+            b: targetColor.b,
+            duration: shouldIntensify ? 0.45 : 0.4,
+            ease: 'power2.out',
+            overwrite: true
         });
+    }, [isSelected, isTouch, hoverColorHex, baseColorHex]);
 
-        // Show/hide painted box
-        if (shouldPaint) {
-            if (hideDelayRef.current) hideDelayRef.current.kill();
-            if (paintedBoxRef.current) paintedBoxRef.current.visible = true;
-        } else {
-            // Hide painted box after reverse animation completes
-            // On initial mount (when hideDelay is empty), hide it very quickly (0.05s) just to allow 1-3 frames for compilation
-            const delay = hideDelayRef.current === undefined ? 0.05 : (duration + 0.05);
-            hideDelayRef.current = gsap.delayedCall(delay, () => {
-                if (paintedBoxRef.current) paintedBoxRef.current.visible = false;
-            });
-        }
-    }, [faceConfig, isSelected, isTouch]);
-
-    // React to purely external changes (e.g., overlay closes and isSelected becomes false)
     useEffect(() => {
-        updatePaintState();
-    }, [isSelected, updatePaintState]);
+        updateBrickColor();
+    }, [isSelected, updateBrickColor]);
 
-    if (!faceConfig) {
-        // Fallback for unknown platform
-        return (
-            <group ref={meshRef} position={[item.x, item.baseY, item.z]} rotation={[0, item.rot, 0]}>
-                <mesh frustumCulled={false}>
-                    <boxGeometry args={[item.width, item.height, item.depth]} />
-                    <meshBasicMaterial color={item.platformConfig.color} />
-                </mesh>
-            </group>
-        );
-    }
+    // Edges geometry for hand-drawn sketch wireframe border around brick
+    const edgesGeo = useMemo(() => {
+        return new THREE.EdgesGeometry(new THREE.BoxGeometry(item.width, item.height, item.depth));
+    }, [item.width, item.height, item.depth]);
+
+    // Ensure floating card is wide enough so names never overflow
+    const badgeWidth = Math.max(1.85, item.width * 0.95);
 
     return (
         <group
@@ -810,12 +647,12 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
                 if (disabled) return;
                 e.stopPropagation();
                 isHoveredRef.current = true;
-                updatePaintState();
+                updateBrickColor();
                 document.body.style.cursor = 'pointer';
             }}
             onPointerOut={() => {
                 isHoveredRef.current = false;
-                updatePaintState();
+                updateBrickColor();
                 document.body.style.cursor = 'auto';
             }}
             onPointerUp={(e) => {
@@ -824,89 +661,92 @@ const MonitorBlock = memo(({ item, meshRef, isSelected, onMonitorClick, disabled
                 onMonitorClick(item);
             }}
         >
-            {/* PAINTED BOX (behind) — initially visible to force shader compilation during loading phase */}
-            <mesh ref={paintedBoxRef} visible={true} frustumCulled={false}>
-                <boxGeometry args={[item.width, item.height, item.depth]} />
-                {paintedMaterials.map((mat, i) => (
-                    <primitive key={`p${i}`} attach={`material-${i}`} object={mat} />
-                ))}
-            </mesh>
-
-            {/* SKETCH BOX (front) — revealMaterial faces get discarded on hover */}
+            {/* SOLID COLOUR BRICK */}
             <mesh frustumCulled={false}>
                 <boxGeometry args={[item.width, item.height, item.depth]} />
-                {faceConfig.map((face, i) => {
-                    if (face.painted) {
-                        // This face has a painted version → use revealMaterial for brush-stroke discard
-                        return (
-                            <revealMaterial color="#fcf3c6"
-                                key={`s${i}`}
-                                ref={matRefs[i]}
-                                attach={`material-${i}`}
-                                map={face.sketch}
-                                transparent={true}
-                                alphaTest={0.1}
-                                paintUniforms={paintUniforms}
-                                paintConfig={STUDIO_PAINT_CONFIG}
-                                uProgress={0.0}
-                            />
-                        );
-                    } else {
-                        // No painted version → standard material (no reveal)
-                        return (
-                            <primitive key={`s${i}`} attach={`material-${i}`} object={sketchMaterials[i]} />
-                        );
-                    }
-                })}
+                <meshBasicMaterial
+                    ref={brickMatRef}
+                    color={baseColorHex}
+                    transparent={true}
+                    opacity={0.96}
+                    onBeforeCompile={paintOnBeforeCompile}
+                />
             </mesh>
 
-            {/* Crisp, sharp 3D vector text details rendered directly on monitor screen */}
+            {/* HAND-DRAWN SKETCH WIREFRAME OUTLINE AROUND BRICK */}
+            <lineSegments geometry={edgesGeo} frustumCulled={false}>
+                <lineBasicMaterial color="#1a1a1a" transparent={true} opacity={0.65} linewidth={1.5} />
+            </lineSegments>
+
+            {/* FLOATING CARD WITH NAME ON UI (Properly contained bounds) */}
+            <group position={[0, item.height / 2 + 0.28, 0]}>
+                {/* Paper card background */}
+                <mesh position={[0, 0, 0]}>
+                    <planeGeometry args={[badgeWidth, 0.38]} />
+                    <meshBasicMaterial color="#ffffff" transparent opacity={0.96} side={THREE.DoubleSide} />
+                </mesh>
+                {/* Torn paper sketch border */}
+                <mesh position={[0, 0, -0.005]}>
+                    <planeGeometry args={[badgeWidth + 0.05, 0.43]} />
+                    <meshBasicMaterial color="#1a1a1a" transparent opacity={0.88} side={THREE.DoubleSide} />
+                </mesh>
+                <Text
+                    position={[0, 0, 0.02]}
+                    fontSize={0.11}
+                    color="#1a1a1a"
+                    anchorX="center"
+                    anchorY="middle"
+                    font="/fonts/CabinSketch-Bold.ttf"
+                    maxWidth={badgeWidth - 0.25}
+                    textAlign="center"
+                >
+                    {item.floatingName || item.title}
+                </Text>
+            </group>
+
+            {/* Crisp, sharp 3D vector text details rendered directly on brick face */}
             <ScreenTextDetails item={item} />
         </group>
     );
 });
 
 /**
- * ScreenTextDetails Component - Renders crystal clear vector 3D text on monitor screens
+ * ScreenTextDetails Component - Renders crystal clear vector 3D text safely within brick container
  */
 const ScreenTextDetails = ({ item }) => {
-    // If item has a custom graphic front texture, the texture image already contains hand-drawn art & text.
-    // Rendering dynamic 3D text over custom graphics causes text overlap.
-    if (item.frontTexture) return null;
-
     const isPhone = item.width < 0.8;
 
     if (isPhone) {
         return (
             <group position={[0, 0, item.depth / 2 + 0.02]}>
                 <Text
-                    position={[0, item.height * 0.36, 0]}
-                    fontSize={0.052}
+                    position={[0, item.height * 0.35, 0]}
+                    fontSize={0.048}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="top"
-                    maxWidth={item.width * 0.85}
+                    maxWidth={item.width * 0.82}
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    {`✦ ${item.platformConfig?.label?.toUpperCase() || 'MICRO MOTION'}`}
+                    {`✦ ${item.badge || 'DETAILS'}`}
                 </Text>
                 <Text
-                    position={[0, item.height * 0.22, 0]}
-                    fontSize={0.062}
+                    position={[0, item.height * 0.20, 0]}
+                    fontSize={0.055}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="top"
-                    maxWidth={item.width * 0.85}
+                    maxWidth={item.width * 0.82}
                     maxLines={2}
                     font="/fonts/CabinSketch-Bold.ttf"
-                    lineHeight={1.1}
+                    lineHeight={1.12}
                 >
                     {item.title}
                 </Text>
                 <Text
-                    position={[0, -item.height * 0.14, 0]}
-                    fontSize={0.042}
-                    color="#1a1a1a"
+                    position={[0, -item.height * 0.06, 0]}
+                    fontSize={0.038}
+                    color="#2a2a2a"
                     anchorX="center"
                     anchorY="top"
                     maxWidth={item.width * 0.82}
@@ -923,40 +763,41 @@ const ScreenTextDetails = ({ item }) => {
     return (
         <group position={[0, 0, item.depth / 2 + 0.02]}>
             <Text
-                position={[-item.width * 0.44, item.height * 0.36, 0]}
-                fontSize={item.width * 0.048}
+                position={[-item.width * 0.42, item.height * 0.34, 0]}
+                fontSize={0.075}
                 color="#1a1a1a"
                 anchorX="left"
                 anchorY="top"
+                maxWidth={item.width * 0.84}
                 font="/fonts/CabinSketch-Bold.ttf"
             >
-                {`✦ ${item.platformConfig?.label?.toUpperCase() || 'CASE STUDY'} // ${item.date || ''}`}
+                {`✦ ${item.badge || 'DETAILS'} // ${item.date || ''}`}
             </Text>
 
             <Text
-                position={[-item.width * 0.44, item.height * 0.22, 0]}
-                fontSize={item.width * 0.055}
+                position={[-item.width * 0.42, item.height * 0.17, 0]}
+                fontSize={0.092}
                 color="#1a1a1a"
                 anchorX="left"
                 anchorY="top"
-                maxWidth={item.width * 0.54}
+                maxWidth={item.width * 0.84}
                 maxLines={2}
                 font="/fonts/CabinSketch-Bold.ttf"
-                lineHeight={1.1}
+                lineHeight={1.15}
             >
                 {item.title}
             </Text>
 
             <Text
-                position={[-item.width * 0.44, -item.height * 0.16, 0]}
-                fontSize={item.width * 0.042}
-                color="#1a1a1a"
+                position={[-item.width * 0.42, -item.height * 0.06, 0]}
+                fontSize={0.065}
+                color="#2a2a2a"
                 anchorX="left"
                 anchorY="top"
-                maxWidth={item.width * 0.54}
+                maxWidth={item.width * 0.84}
                 maxLines={3}
                 font="/fonts/CabinSketch-Regular.ttf"
-                lineHeight={1.2}
+                lineHeight={1.22}
             >
                 {item.description}
             </Text>

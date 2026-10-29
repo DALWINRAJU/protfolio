@@ -69,16 +69,16 @@ export default function Navigation() {
             onClick={(e) => handleLinkClick(e, 'home')}
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: '1.4rem',
+              fontSize: '1.2rem',
               fontWeight: 700,
-              letterSpacing: '2px',
+              letterSpacing: '1.5px',
               color: 'var(--text-primary)',
               display: 'flex',
               alignItems: 'center',
               gap: '2px'
             }}
           >
-            <span style={{ color: 'var(--accent-primary)' }}>S</span>HAN
+            <span style={{ color: 'var(--accent-primary)' }}>D</span>ALWINRAJU R
           </a>
 
           {/* Desktop Navigation Links */}

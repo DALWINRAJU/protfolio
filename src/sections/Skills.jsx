@@ -98,7 +98,7 @@ export default function Skills() {
               fontWeight: 300,
             }}
           >
-            A breakdown of my technical stack, visual prototyping workflows, optimization tools, and content management packages.
+            A breakdown of my technical stack — from Java full-stack development and responsive React.js frontends to UI/UX design workflows, REST APIs, and map integration libraries.
           </p>
         </div>
 

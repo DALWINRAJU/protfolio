@@ -352,7 +352,7 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                SHAN
+                DALWINRAJU R
             </Text>
 
             {/* Subtitle - Brand (spreads right) */}
@@ -417,64 +417,67 @@ const AWARDS_DATA = {
     featured: {
         id: 'award-featured',
         layout: 'certificate_grid',
-        title: 'Core Capabilities & Technical Stack',
+        title: 'Competitions, Symposiums & Hackathons',
         items: [
-            { label: 'Full Stack Engineering (React / Next.js / Node)', date: 'Active', image: '/textures/about/button.webp', url: '#' },
-            { label: '3D Canvas & WebGL Experiences (Three.js)', date: 'Active', image: '/textures/about/button.webp', url: '#' },
-            { label: 'High-Performance Motion (GSAP / Framer)', date: 'Active', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Database & Cloud Architecture (Supabase / Postgres)', date: 'Active', image: '/textures/about/button.webp', url: '#' },
+            { label: '1st Prize — Intra Hackathon, GCE Srirangam', date: 'Winner', image: '/textures/about/button.webp', url: '#' },
+            { label: '1st Prize, Paper Presentation — Thanjavur Govt College', date: '1st Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: '2nd Prize, Paper Presentation — Kalasalingam University', date: '2nd Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: '3rd Prize, Paper Presentation — Dharmapuri Govt College', date: '3rd Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: '2nd Prize, Knowledge Battle — Dharmapuri Govt College', date: '2nd Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Participant — Erode Symposium (Zinna) & Coimbatore Symposium', date: 'Honors', image: '/textures/about/button.webp', url: '#' },
         ],
         platformConfig: {
-            label: 'EXPERTISE',
+            label: 'COMPETITIONS',
             color: '#00D9FF',
-            icon: '⭐'
+            icon: '🏆'
         }
     },
     sotd: {
         id: 'award-sotd',
         layout: 'certificate_grid',
-        title: 'Frontend & Creative Engineering',
+        title: '1st Prize — Paper Presentation',
         items: [
-            { label: 'React & Next.js Web Engineering', date: '2026', image: '/textures/about/button.webp', url: '#' },
-            { label: '3D WebGL Shaders & Canvas Interactions', date: '2026', image: '/textures/about/button.webp', url: '#' },
-            { label: 'GSAP Scrollytelling & Frame Sequences', date: '2025', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Responsive Mobile-First Interfaces', date: 'Active', image: '/textures/about/button.webp', url: '#' }
+            { label: '1st Prize Winner — Paper Presentation at Thanjavur Government College Symposium', date: '1st Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: '1st Prize Winner — Intra Hackathon at Government College of Engineering, Srirangam', date: 'Champion', image: '/textures/about/button.webp', url: '#' },
+            { label: '2nd Prize Winner — Knowledge Battle at Dharmapuri Government College Symposium', date: '2nd Prize', image: '/textures/about/button.webp', url: '#' },
         ],
         platformConfig: {
-            label: 'DEVELOPER',
+            label: '1ST PRIZE',
             color: '#00D9FF',
-            icon: '💻'
+            icon: '🥇'
         }
     },
     sotm: {
         id: 'award-sotm',
         layout: 'certificate_grid',
-        title: 'Full Stack & Cloud Architecture',
+        title: 'International Conclave Research Paper',
         items: [
-            { label: 'Node.js & Express REST Infrastructure', date: '2026', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Supabase & PostgreSQL Data Modeling', date: '2025', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Cloud Media & Asset Optimization', date: '2026', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Core Vitals & Sub-Second Hydration', date: 'Active', image: '/textures/about/button.webp', url: '#' }
+            { label: 'Presented Research Paper at International Conclave (TN Dr. Ambedkar Law Univ & Anna Univ Chennai)', date: 'International', image: '/textures/about/button.webp', url: '#' },
+            { label: '2nd Prize, Paper Presentation — Kalasalingam University Symposium', date: '2nd Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: '3rd Prize, Paper Presentation — Dharmapuri Government College Symposium', date: '3rd Prize', image: '/textures/about/button.webp', url: '#' }
         ],
         platformConfig: {
-            label: 'FULL STACK',
+            label: 'RESEARCH',
             color: '#00D9FF',
-            icon: '⚡'
+            icon: '📜'
         }
     },
     other: {
         id: 'award-other',
         layout: 'certificate_grid',
-        title: 'Creative Engineering & UI Design',
+        title: 'State Symposium Honors & Hackathon',
         items: [
-            { label: 'Interactive Storytelling & Physics', date: '2026', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Awwwards-Level Design Systems', date: '2025', image: '/textures/about/button.webp', url: '#' },
-            { label: 'Fluid Motion & Tactile Interactions', date: '2026', image: '/textures/about/button.webp', url: '#' }
+            { label: 'Intra Hackathon 1st Prize — Government College of Engineering, Srirangam', date: 'Winner', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Paper Presentation 1st Prize — Thanjavur Government College', date: 'Winner', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Paper Presentation 2nd Prize — Kalasalingam University', date: 'Runner-up', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Knowledge Battle 2nd Prize — Dharmapuri Government College', date: 'Runner-up', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Paper Presentation 3rd Prize — Dharmapuri Government College', date: '3rd Prize', image: '/textures/about/button.webp', url: '#' },
+            { label: 'Symposium Participant — Erode (Zinna) and Coimbatore', date: 'Delegate', image: '/textures/about/button.webp', url: '#' }
         ],
         platformConfig: {
-            label: 'CREATIVE',
+            label: 'AWARDS',
             color: '#00D9FF',
-            icon: '🎨'
+            icon: '🏅'
         }
     }
 };
@@ -493,13 +496,9 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
     const { openOverlay } = useScene();
     const groupRef = useRef();
     const sotyRef = useRef();
-    const sotdRef = useRef();
     const sotmRef = useRef();
 
     // Card reveal refs (driven by button hover)
-    const sotdCardRevealRef = useRef();
-    const sotdCardPaintedRef = useRef();
-    const sotdHideDelayRef = useRef();
     const sotmCardRevealRef = useRef();
     const sotmCardPaintedRef = useRef();
     const sotmHideDelayRef = useRef();
@@ -509,20 +508,16 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
 
     // Load textures
     const sotyTexture = useLoader(THREE.TextureLoader, '/textures/about/SOTY.webp');
-    const sotdTexture = useLoader(THREE.TextureLoader, '/textures/about/SOTD.webp');
     const sotmTexture = useLoader(THREE.TextureLoader, '/textures/about/SOTM.webp');
     const sotyPaintedTexture = useLoader(THREE.TextureLoader, isTouch ? '/textures/about/SOTY.webp' : '/textures/about/SOTY_painted.webp');
-    const sotdPaintedTexture = useLoader(THREE.TextureLoader, isTouch ? '/textures/about/SOTD.webp' : '/textures/about/SOTD_painted.webp');
     const sotmPaintedTexture = useLoader(THREE.TextureLoader, isTouch ? '/textures/about/SOTM.webp' : '/textures/about/SOTM_painted.webp');
     const buttonTexture = useLoader(THREE.TextureLoader, '/textures/about/button.webp');
     const buttonPaintedTexture = useLoader(THREE.TextureLoader, isTouch ? '/textures/about/button.webp' : '/textures/about/button_painted.webp');
 
     // Color space fix
     sotyTexture.colorSpace = THREE.SRGBColorSpace;
-    sotdTexture.colorSpace = THREE.SRGBColorSpace;
     sotmTexture.colorSpace = THREE.SRGBColorSpace;
     sotyPaintedTexture.colorSpace = THREE.SRGBColorSpace;
-    sotdPaintedTexture.colorSpace = THREE.SRGBColorSpace;
     sotmPaintedTexture.colorSpace = THREE.SRGBColorSpace;
     buttonTexture.colorSpace = THREE.SRGBColorSpace;
     buttonPaintedTexture.colorSpace = THREE.SRGBColorSpace;
@@ -596,29 +591,16 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
             revealFactor = 1;
         }
 
-        const sotyStart = -80;
-        const sotyEnd = -20;
-        let sotyFactor = 0;
+        const spreadX = 2.8;
 
-        if (distanceZ > sotyStart && distanceZ < sotyEnd) {
-            sotyFactor = (distanceZ - sotyStart) / (sotyEnd - sotyStart);
-            sotyFactor = Math.min(1, Math.max(0, sotyFactor));
-            sotyFactor = 1 - Math.pow(1 - sotyFactor, 2);
-        } else if (distanceZ >= sotyEnd) {
-            sotyFactor = 1;
-        }
-
-        const spreadX = 5;
-
-        if (sotdRef.current) {
-            sotdRef.current.position.x = -revealFactor * spreadX;
-        }
         if (sotmRef.current) {
-            sotmRef.current.position.x = revealFactor * spreadX;
+            sotmRef.current.position.x = -revealFactor * spreadX;
+            sotmRef.current.position.y = 0.5;
         }
 
         if (sotyRef.current) {
-            sotyRef.current.position.y = 0.5 + sotyFactor * 2.5;
+            sotyRef.current.position.x = revealFactor * spreadX;
+            sotyRef.current.position.y = 0.5;
         }
     });
 
@@ -627,78 +609,17 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
             {/* Title */}
             <Text
                 position={[0, 4, 0]}
-                fontSize={1.2}
+                fontSize={1.1}
                 color="#1a1a1a"
                 anchorX="center"
                 anchorY="middle"
                 font="/fonts/RubikScribble-Regular.ttf"
             >
-                CAPABILITIES
+                ACHIEVED PRIZES & AWARDS
             </Text>
 
-            {/* === SOTD (behind SOTY, rendered second) === */}
-            <group ref={sotdRef} position={[0, 0.5, -0.5]}>
-                {/* Painted card (behind) - hidden until button hover */}
-                <mesh ref={sotdCardPaintedRef} position={[0, 0, -0.001]} visible={true}>
-                    <planeGeometry args={[cardHeight * cardLegacyAspect, cardHeight]} />
-                    <meshBasicMaterial color="#fcf3c6"
-                        map={sotdPaintedTexture}
-                        transparent
-                        opacity={0}
-                        side={THREE.DoubleSide}
-                        alphaTest={0.5}
-                    />
-                </mesh>
-                {/* Sketch card (front) with reveal */}
-                <mesh>
-                    <planeGeometry args={[cardHeight * cardLegacyAspect, cardHeight]} />
-                    <revealBasicMaterial
-                        ref={sotdCardRevealRef}
-                        map={sotdTexture}
-                        transparent
-                        side={THREE.DoubleSide}
-                        uProgress={0.0}
-                    />
-                </mesh>
-                {/* BUTTON */}
-                <AwardButton
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        openOverlay(awardsData.sotd);
-                    }}
-                    texture={buttonTexture}
-                    paintedTexture={buttonPaintedTexture}
-                    width={buttonWidth}
-                    height={buttonHeight}
-                    position={[0, buttonY, 0.05]}
-                    onHoverChange={makeCardHoverHandler(sotdCardRevealRef, sotdCardPaintedRef, sotdHideDelayRef)}
-                />
-                {/* AWARD LABEL */}
-                <Text
-                    position={[0, 0.95, 0.01]}
-                    fontSize={0.4}
-                    color="#1a1a1a"
-                    anchorX="center"
-                    anchorY="middle"
-                    font="/fonts/CabinSketch-Bold.ttf"
-                >
-                    DEVELOPER
-                </Text>
-                {/* CAPACITY SUBTITLE */}
-                <Text
-                    position={[0, 0.1, 0.01]}
-                    fontSize={0.2}
-                    color="#4a4a4a"
-                    anchorX="center"
-                    anchorY="middle"
-                    font="/fonts/CabinSketch-Regular.ttf"
-                >
-                    React & Next.js
-                </Text>
-            </group>
-
-            {/* === SOTM (behind SOTY, rendered third) === */}
-            <group ref={sotmRef} position={[0, 0.5, -0.2]}>
+            {/* === SOTM (Left Card: International Conclave) === */}
+            <group ref={sotmRef} position={[-2.8, 0.5, 0]}>
                 {/* Painted card (behind) - hidden until button hover */}
                 <mesh ref={sotmCardPaintedRef} position={[0, 0, -0.001]} visible={true}>
                     <planeGeometry args={[cardHeight * cardLegacyAspect, cardHeight]} />
@@ -737,13 +658,13 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                 {/* AWARD LABEL */}
                 <Text
                     position={[0, 0.95, 0.01]}
-                    fontSize={0.4}
+                    fontSize={0.34}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    FULL STACK
+                    INT'L CONCLAVE
                 </Text>
                 {/* CAPACITY SUBTITLE */}
                 <Text
@@ -754,12 +675,12 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Regular.ttf"
                 >
-                    Node & Databases
+                    Research Paper • Ambedkar Law & Anna Univ
                 </Text>
             </group>
 
-            {/* === SOTY (front, center, rendered LAST = always on top) === */}
-            <group ref={sotyRef} position={[0, 0.5, 0]}>
+            {/* === SOTY (Right Card: Hackathon & State Symposium Prizes) === */}
+            <group ref={sotyRef} position={[2.8, 0.5, 0]}>
                 {/* Painted card (behind) - hidden until button hover */}
                 <mesh ref={sotyCardPaintedRef} position={[0, 0, -0.001]} visible={true}>
                     <planeGeometry args={[cardHeight * cardLegacyAspect, cardHeight]} />
@@ -797,13 +718,13 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                 {/* AWARD LABEL */}
                 <Text
                     position={[0, 0.95, 0.01]}
-                    fontSize={0.4}
+                    fontSize={0.32}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    CREATIVE
+                    HACKATHON & PRIZES
                 </Text>
                 {/* CAPACITY SUBTITLE */}
                 <Text
@@ -814,7 +735,7 @@ const AwardsMilestone = ({ z, scrollProgressRef }) => {
                     anchorY="middle"
                     font="/fonts/CabinSketch-Regular.ttf"
                 >
-                    3D & Motion Physics
+                    1st Prize Intra Hackathon • 2nd & 3rd Prizes
                 </Text>
             </group>
         </group>
@@ -924,7 +845,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                 anchorY="middle"
                 font="/fonts/CabinSketch-Regular.ttf"
             >
-                Full Stack & Creative Engineering Roadmap
+                Education, Projects & Recognized Honors
             </Text>
 
             {/* === UO ISLAND (Left) === */}
@@ -950,7 +871,7 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                 </Text>
             </group>
 
-            {/* === FREELANCE ISLAND (Right) === */}
+            {/* === ACHIEVED PRIZES ISLAND (Right) === */}
             <group ref={freelanceRef} position={[3.5, -2, 0.5]}>
                 <mesh>
                     <planeGeometry args={[islandHeight * freelanceAspect, islandHeight]} />
@@ -960,16 +881,26 @@ const JourneyMilestone = ({ z, scrollProgressRef }) => {
                         side={THREE.DoubleSide}
                     />
                 </mesh>
-                {/* NAPIS NA WYSPIE (Freelance) */}
+                {/* NAPIS NA WYSPIE (Achieved Prizes) */}
                 <Text
                     position={[0, -0.65, 0.1]}
-                    fontSize={0.42}
+                    fontSize={0.34}
                     color="#1a1a1a"
                     anchorX="center"
                     anchorY="middle"
                     font="/fonts/CabinSketch-Bold.ttf"
                 >
-                    CREATIVE DEV
+                    ACHIEVED PRIZES
+                </Text>
+                <Text
+                    position={[0, -1.05, 0.1]}
+                    fontSize={0.18}
+                    color="#333333"
+                    anchorX="center"
+                    anchorY="middle"
+                    font="/fonts/CabinSketch-Regular.ttf"
+                >
+                    1st Prize • Int'l Conclave • Hackathon
                 </Text>
             </group>
         </group>

@@ -84,7 +84,7 @@ export const CORRIDOR_TEXTURES = [
     '/textures/corridor/gorastolika.webp',
     '/textures/corridor/szafkaprzod.webp',
     '/textures/corridor/szafkaprzodgora.webp',
-    '/textures/corridor/rysuneknaobraz1.webp',
+    '/textures/corridor/international-conclave.jpeg',
     '/textures/corridor/rysuneknaobrazek3.webp',
     // DoorSection extras
     '/textures/corridor/strzalka.webp',
@@ -132,16 +132,10 @@ export const GALLERY_TEXTURES_BASE = [
     '/textures/gallery/miastotlo.webp',
     '/textures/gallery/bird_gray.webp',
     '/textures/gallery/klamerka.webp',
-    '/textures/gallery/openliveproject.webp',
 ];
 
 export const GALLERY_TEXTURES_VERSIONED = [
-    // Project cards
-    'monetuneprzod',
-    'timberkittyprzod',
-    'youngmultiprzod',
-    'bioprzod',
-    // Card back
+    // Card back and front base
     'tylkartki',
     'przyciskdotylukartki',
     // Tech stack logos
@@ -265,15 +259,6 @@ export const STUDIO_TEXTURES = [
     '/textures/studio/phone_back_painted.webp',
     '/textures/studio/phone_side.webp',
     '/textures/studio/phone_side_painted.webp',
-    // Custom content front textures
-    '/textures/studio/monitorfront_postnafbdoublewinner.webp',
-    '/textures/studio/monitorfront_postnafbdoublewinner_painted.webp',
-    '/textures/studio/phonefront_followmeontiktok.webp',
-    '/textures/studio/phonefront_followmeontiktok_painted.webp',
-    '/textures/studio/tvfront_filmikedytowaniezdjec.webp',
-    '/textures/studio/tvfront_filmikedytowaniezdjec_painted.webp',
-    '/textures/studio/tvfront_filmikprojektdlamultiego.webp',
-    '/textures/studio/tvfront_filmikprojektdlamultiego_painted.webp',
 ];
 
 // ============================================
@@ -307,14 +292,14 @@ export const PRELOAD_LOADER = [
 export const filterTexturesByDevice = (list, usePainted) => {
     // 1. Identify all paths that have a _painted version available
     const paintedVersions = new Set(list.filter(p => p.includes('_painted.webp')));
-    
+
     // Also include the special css3logo case
     const hasCss3Painted = list.some(p => p.includes('css3logo_painted.webp'));
-    
+
     return list.filter(path => {
         const isPainted = path.includes('_painted.webp');
         const isCss3 = path.includes('css3logo_painted.webp');
-        
+
         // Find the "standard" version for this path if it's a painted one
         let standardVersion = null;
         if (isPainted) {
@@ -327,7 +312,7 @@ export const filterTexturesByDevice = (list, usePainted) => {
             const css3Version = path.replace('csslogo.webp', 'css3logo_painted.webp');
             if (list.includes(pVersion) || (path.includes('csslogo.webp') && hasCss3Painted)) {
                 // Return true to keep the standard version! Both desktop and mobile need it.
-                return true; 
+                return true;
             }
             // If it doesn't have a painted version, it's a static texture (always keep)
             return true;

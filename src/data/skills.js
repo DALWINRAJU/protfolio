@@ -1,27 +1,28 @@
 export const skillsData = [
   {
-    category: "Frontend",
-    description: "Architecting interactive, responsive, and performance-first web platforms.",
-    skills: ["HTML5", "CSS3", "JavaScript", "TypeScript", "React", "Next.js"]
+    category: "Languages",
+    description: "Core programming languages for full-stack software development.",
+    skills: ["Java", "JavaScript", "C", "Python", "PHP"]
   },
   {
-    category: "Animation",
-    description: "Crafting fluid scrollytelling physics, 3D web scenes, and micro-interactions.",
-    skills: ["GSAP", "Framer Motion", "Lenis", "Three.js", "React Three Fiber"]
+    category: "Frontend Development",
+    description: "Building responsive, modern, and user-centered web interfaces.",
+    skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Bootstrap", "Responsive Web Design"]
   },
   {
-    category: "Backend",
-    description: "Engineering scalable backend architectures, cloud APIs, and media delivery pipelines.",
-    skills: ["Node.js", "Express.js", "Supabase", "Firebase", "REST APIs", "Cloudinary"]
+    category: "Backend Development",
+    description: "Architecting REST APIs, server logic, and backend services.",
+    skills: ["Spring Boot", "Node.js", "REST API Development", "Thymeleaf"]
   },
   {
-    category: "Database",
-    description: "Designing relational database schemas and cloud data storage layers.",
-    skills: ["PostgreSQL", "Supabase"]
+    category: "Database & UI/UX",
+    description: "Relational database management and user-centered design practices.",
+    skills: ["MySQL", "Wireframing", "Prototyping", "User Research", "Figma", "Design Thinking"]
   },
   {
-    category: "Tools",
-    description: "Utilizing modern developer environments, AI engineering workflows, and deployment tools.",
-    skills: ["Git", "GitHub", "Figma", "VS Code", "Cursor AI", "Claude", "ChatGPT", "Vercel"]
+    category: "Tools & Libraries",
+    description: "Development environments, version control, and mapping libraries.",
+    skills: ["Git", "GitHub", "VS Code", "Eclipse", "Leaflet.js", "Bootstrap Icons", "XAMPP", "Jupyter Notebook"]
   }
 ];
+

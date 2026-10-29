@@ -103,7 +103,7 @@ export default function Projects() {
               fontWeight: 300
             }}
           >
-            A curated portfolio of spatial product reveals, high-performance automotive platforms, editorial luxury experiences, and full stack ecommerce engines.
+            A curated portfolio of production-ready applications — from a map-integrated food donation platform and an intelligent voice AI assistant to a glassmorphism productivity tool and a personal developer showcase.
           </p>
         </div>
 

@@ -28,10 +28,19 @@ const tempQuat = new THREE.Quaternion();
 
 const CABIN_SKETCH_URL = '/fonts/CabinSketch-Regular.ttf';
 
-const PictureContent = ({ imagePath, imagePaintedPath, width, height, isPainted }) => {
+const PictureContent = ({ imagePath, imagePaintedPath, width, height, isPainted, imageRotation = 0 }) => {
     const texture = useTexture(imagePath);
     // Render nothing if no painted path, but we still call the hook unconditionally to respect hook rules
     const paintedTexture = useTexture(imagePaintedPath || imagePath);
+
+    // Apply rotation to texture UV if needed (e.g. portrait photo of landscape content)
+    useEffect(() => {
+        if (imageRotation && texture) {
+            texture.center.set(0.5, 0.5);
+            texture.rotation = imageRotation;
+            texture.needsUpdate = true;
+        }
+    }, [texture, imageRotation]);
 
     const materialRef = useRef();
 
@@ -294,6 +303,7 @@ const InspectableFrame = ({ frame, wallX, frameTexture, framePaintedTexture, CAB
                     width={frame.imageWidth || frame.width * 0.7}
                     height={frame.imageHeight || frame.height * 0.7}
                     isPainted={isHovered || isInspected}
+                    imageRotation={frame.imageRotation || 0}
                 />
             )}
 
@@ -374,16 +384,17 @@ const CorridorDecorations = ({ segmentLength, zOffset, corridorWidth = 4, corrid
     const frames = useMemo(() => [
         {
             z: zOffset - 10,         // Między startem a Gallery (relZ -5 do -15)
-            side: 'right',
+            side: 'left',
             width: 2.5,              // Szerokość ramki
-            height: 2.5 / 1.785,     // Legacy ratio 3200x1792
+            height: 2.5 / 1.785,     // Legacy ratio
             y: 0.3,                  // Wysokość na ścianie
             id: 'frame-1',
-            // Custom setup for "rysuneknaobraz1.png"
-            image: '/textures/corridor/rysuneknaobraz1.webp',
-            imageWidth: 1.1,
-            imageHeight: 1.1,
-            offsetFromWall: 0.1, // Przesunięcie bliżej środka korytarza (0.1 unit)
+            // International Conclave Certificate (landscape, photo is portrait-rotated)
+            image: '/textures/corridor/international-conclave.jpeg',
+            imageWidth: 1.2,
+            imageHeight: 0.9,
+            imageRotation: Math.PI / 2, // Rotate 90° to display landscape
+            offsetFromWall: 0.1,
         },
         {
             z: zOffset - 25,         // Między Gallery a Studio (relZ -20 do -30)

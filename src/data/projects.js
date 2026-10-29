@@ -1,122 +1,108 @@
 export const projects = [
   {
-    id: "apple-vision-pro",
-    title: "Apple Vision Pro Interactive Experience",
-    category: "Spatial Computing / Scrollytelling",
-    shortDescription: "A spatial computing web showcase with frame-by-frame 3D canvas interaction, luxury depth rendering, and physics-driven scroll mechanics.",
-    tags: ["React", "Three.js", "GSAP", "Lenis", "WebGL"],
-    image: "https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?auto=format&fit=crop&w=1200&q=80",
+    id: "annapoorna",
+    title: "Annapoorna – Food Sharing & Donation Platform",
+    category: "Full-Stack Web & Map Application",
+    color: "#10b981",
+    shortDescription: "A map-based food donation platform connecting donors with orphanages and care homes using Spring Boot, Thymeleaf, Leaflet.js, and MySQL.",
+    tags: ["Spring Boot", "Thymeleaf", "Bootstrap", "MySQL", "Leaflet.js", "REST APIs"],
+    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+    liveUrl: "https://anapoorna-frontend.onrender.com/",
     caseStudy: {
-      overview: "An flagship spatial digital experience created to redefine interactive product reveals. Blending real-time 3D viewport graphics, glassmorphism UI layers, and fluid scroll interpolation to communicate Apple Vision Pro's spatial hardware precision.",
-      challenge: "Rendering heavy refractive glass shaders, 3D volumetric light rays, and spatial UI elements simultaneously while preserving an unyielding 60fps frame rate across mobile GPU and desktop viewports.",
-      approach: "Engineered a custom decoupled rendering loop isolating scroll physics from WebGL frame updates. Leveraged Lenis smooth scrolling alongside GSAP timeline triggers and LOD geometry streaming.",
-      solution: "Developed custom fragment shaders for spatial glass refraction, optimized geometry instancing, and responsive canvas scaling for zero-latency interactions.",
-      technologies: ["React", "Three.js", "GSAP ScrollTrigger", "Lenis", "WebGL Shaders", "TypeScript"],
+      overview: "Annapoorna is a full-stack, map-integrated food donation platform engineered to bridge the gap between food donors and receiving institutions like orphanages and elderly care homes to reduce food waste.",
+      challenge: "Matching donors with nearby recipients efficiently while ensuring real-time location mapping, responsive cross-device access, and transparent donation post management.",
+      approach: "Built a robust Spring Boot REST backend with MySQL relational data models, combined with Leaflet.js interactive maps and OpenStreetMap for real-time location pinning and proximity recommendation logic.",
+      solution: "Developed RESTful APIs, full CRUD post management, dynamic image uploading, location-based filtering, and a mobile-friendly Bootstrap UI.",
+      technologies: ["Spring Boot", "Thymeleaf", "Bootstrap", "MySQL", "Leaflet.js", "OpenStreetMap", "Java"],
       keyFeatures: [
-        "Physics-driven 3D object rotation on scroll",
-        "Real-time glass refraction and optic blur shaders",
-        "Spatial audio cues synchronized with interaction depth",
-        "Fluid responsive canvas viewport adjustment"
+        "Interactive Leaflet.js & OpenStreetMap real-time location pinning",
+        "Nearby recipient recommendation logic for optimal donation matching",
+        "Full CRUD functionality for listings, user profiles & location data",
+        "Image upload support for donation posts ensuring trust & transparency",
+        "Location-based filtering to quickly discover donation opportunities"
       ],
-      performance: "Sustained constant 60 FPS rendering on target hardware with sub-10ms frame draw times.",
-      outcome: "Recognized as a benchmark spatial web showcase, driving a 4.2x increase in session duration and featured in creative engineering design awards.",
-      results: "Featured on leading web engineering showcases with over 150k unique interactive impressions."
+      performance: "Optimized spatial database queries for fast local recipient matching with zero-lag map rendering.",
+      outcome: "Successfully deployed and demonstrated as a production-ready food waste reduction workflow.",
+      results: "Live deployment on Render connecting community donors with care institutions."
     }
   },
   {
-    id: "bmw-m4-gt3",
-    title: "BMW M4 GT3 EVO Showcase",
-    category: "High-Performance Automotive Experience",
-    shortDescription: "An interactive automotive experience featuring 360° image sequence animation, live telemetry HUD displays, and Web Audio engine synthesis.",
-    tags: ["React Three Fiber", "GSAP", "Canvas API", "Web Audio API"],
-    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+    id: "nova-ai",
+    title: "Nova AI – Intelligent Voice-Enabled Assistant",
+    category: "AI & Voice Assistant Application",
+    color: "#00d9ff",
+    shortDescription: "An AI-powered virtual assistant featuring voice recognition, speech synthesis, and natural language query processing built with React.js.",
+    tags: ["React.js", "AI Integration", "REST APIs", "Web Speech API", "UI/UX Design"],
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    liveUrl: "https://ai-nova-xidg.vercel.app",
     caseStudy: {
-      overview: "A digital showcase for the BMW M4 GT3 EVO, capturing motorsport engineering through interactive 360° image sequence scrubbing, real-time telemetry gauge HUDs, and dynamic engine acoustic synthesis.",
-      challenge: "Synchronizing ultra-high-resolution 360° image frame buffers with live telemetry visualizations and Web Audio Doppler pitch modulation without visual stutter or main-thread blocking.",
-      approach: "Built a multi-threaded pre-buffered canvas pipeline with Web Worker image decoding, bound directly to custom GSAP scrubbers and dynamic Web Audio oscillators.",
-      solution: "Implemented preloaded image buffer arrays, high-contrast HUD overlays styled after endurance race telemetry, and pitch-correct engine audio synthesis.",
-      technologies: ["React Three Fiber", "GSAP ScrollTrigger", "Canvas API", "Web Audio API", "Sass"],
+      overview: "Nova AI is an intelligent virtual assistant designed with a sleek React.js interface, allowing users to interact seamlessly through natural voice commands or text input.",
+      challenge: "Delivering fast, context-aware AI responses with low-latency speech input and output processing while maintaining a clean, distraction-free UI/UX.",
+      approach: "Integrated advanced NLP/AI APIs with browser speech recognition and synthesis APIs into a modular, component-driven React architecture.",
+      solution: "Created hands-free voice interaction loops, fluid visual feedback states, responsive conversational layouts, and clean API integration handlers.",
+      technologies: ["React.js", "AI/NLP APIs", "Web Speech API", "JavaScript", "CSS3"],
       keyFeatures: [
-        "360° tactile drag and scroll vehicle inspection",
-        "Dynamic telemetry HUD with real-time RPM & G-Force gauges",
-        "Interactive audio engine synthesizer pitch-matched to scroll velocity",
-        "High-contrast dark mode UI inspired by telemetry monitors"
+        "Voice input recognition and text-to-speech output synthesis",
+        "Context-aware AI conversational understanding and response generation",
+        "Clean, intuitive UI/UX focused on usability and conversational flow",
+        "Structured reusable React components and flexible API integration layer"
       ],
-      performance: "Pre-buffered 120 asset frames with instantaneous frame switching and 0 cumulative layout shifts.",
-      outcome: "Delivered an immersive motorsport experience that captures the tactile thrill and engineering rigor of BMW M motorsport.",
-      results: "Achieved 98/100 performance score and average user engagement time of 3 minutes 45 seconds."
+      performance: "Achieved instantaneous speech parsing and sub-second conversational response rendering.",
+      outcome: "Deployed live on Vercel as a flagship voice-enabled AI web assistant.",
+      results: "High user engagement with smooth hands-free interaction across desktop and mobile browsers."
     }
   },
   {
-    id: "luxury-tailor",
-    title: "Luxury Tailor Website",
-    category: "Editorial Haute Couture Experience",
-    shortDescription: "An elegant, editorial web experience for a bespoke tailoring house featuring fluid fabric motion, interactive sizing, and minimalist aesthetic.",
-    tags: ["Next.js", "Framer Motion", "Tailored CSS", "WebGL"],
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80",
+    id: "portfolio-website",
+    title: "Personal Developer & UI/UX Portfolio",
+    category: "Developer Portfolio & Showcase",
+    color: "#a855f7",
+    shortDescription: "A fully responsive personal portfolio designed and developed to highlight projects, technical skills, and UI/UX case studies.",
+    tags: ["React.js", "HTML5", "CSS3", "Figma", "UI/UX Design", "Responsive Design"],
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    liveUrl: "https://github.com/DALWINRAJU",
     caseStudy: {
-      overview: "A digital atelier created for a luxury haute couture tailoring house. Designed to evoke tactile elegance through fluid typography reveals, silk warp shaders, and bespoke suit configuration workflows.",
-      challenge: "Translating physical sartorial craftsmanship into a digital browser environment without relying on standard template structures or generic layouts.",
-      approach: "Employed editorial grid systems, bespoke serif typography, micro-cursor physics, and custom WebGL fabric warp shaders triggered by cursor gestures.",
-      solution: "Integrated a custom interactive suit customizer modal with real-time fabric preview and zero cumulative layout shift (CLS) page transitions.",
-      technologies: ["Next.js", "Framer Motion", "WebGL Shaders", "CSS3 Custom Tokens", "Vercel"],
+      overview: "A flagship personal portfolio website designed from wireframes to final code to present software engineering projects, UI/UX design case studies, and technical achievements.",
+      challenge: "Balancing high-end interactive visual design with fast performance, accessibility standards, and intuitive navigation.",
+      approach: "Conducted user research and designed high-fidelity wireframes in Figma before translating concepts into modular React.js components with modern CSS styling.",
+      solution: "Built a fully responsive layout with micro-interactions, clean component structure, and optimized asset delivery.",
+      technologies: ["React.js", "HTML5", "CSS3", "Figma", "JavaScript"],
       keyFeatures: [
-        "Interactive 3D suit customizer & cloth texture inspector",
-        "Cursor-tracked fabric wave shader micro-interactions",
-        "Editorial typography grid layouts with staggered scroll reveals",
-        "Seamless page transitions using Next.js & Framer Motion"
+        "Figma wireframes and high-fidelity prototypes following design thinking",
+        "Component-based architecture optimizing scalability and maintainability",
+        "Cross-device responsive design with micro-animations and dark mode UI",
+        "Comprehensive project case study showcases and technical breakdown"
       ],
-      performance: "100/100 Lighthouse Accessibility and SEO score with sub-second First Contentful Paint.",
-      outcome: "Elevated the brand's global digital presence, resulting in a 45% increase in online consultation bookings.",
-      results: "Increased qualified consultation requests by 45% within 60 days of launch."
+      performance: "100/100 Lighthouse performance and accessibility scores with sub-second page loads.",
+      outcome: "Created an authoritative digital hub showcasing full-stack capabilities and design fundamentals.",
+      results: "Used as personal developer portfolio showcasing real-world applications."
     }
   },
   {
-    id: "fashion-jewellery-ecommerce",
-    title: "Fashion Jewellery Ecommerce",
-    category: "Full Stack Luxury E-Commerce Engine",
-    shortDescription: "A high-end jewellery platform built for speed and aesthetics, featuring instant edge filtering, real-time cart sync, and high-res gem renders.",
-    tags: ["Next.js", "Supabase", "Cloudinary", "Node.js", "PostgreSQL"],
-    image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1200&q=80",
+    id: "aura-ai-todo",
+    title: "Aura — AI Voice Todo List",
+    category: "Voice-Enabled Productivity App",
+    color: "#f59e0b",
+    shortDescription: "A premium glassmorphism AI to-do application featuring natural language date parsing, smart voice reminders, and drag-and-drop task sorting.",
+    tags: ["HTML5", "CSS3", "JavaScript", "Web Speech API", "chrono-node", "Glassmorphism UI"],
+    image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
+    liveUrl: "https://ai-todo-rho-two.vercel.app/",
     caseStudy: {
-      overview: "A full stack ecommerce engine crafted for a luxury jewellery label, combining cloud media delivery pipelines with lightning-fast relational database queries and responsive dark UI.",
-      challenge: "Delivering hundreds of 4K gem imagery assets without degrading mobile network load speeds or commerce conversion flows.",
-      approach: "Architected Cloudinary dynamic image transformations, Next.js server components, Supabase edge database indexing, and optimistic state state management.",
-      solution: "Configured automated AVIF/WebP image conversion pipelines, instant faceted database search, and real-time cart synchronization.",
-      technologies: ["Next.js", "Supabase", "Node.js", "PostgreSQL", "Cloudinary", "TypeScript"],
+      overview: "Aura is a client-side productivity application that lets users manage tasks through natural voice commands or typing, featuring automated date parsing and browser notification scheduling.",
+      challenge: "Parsing natural language date expressions (e.g. 'meeting tomorrow at 6 PM') directly in the client without backend latency or privacy concerns.",
+      approach: "Combined chrono-node natural language processing with Web Speech API and client-side LocalStorage state persistence.",
+      solution: "Engineered a glassmorphism interface with drag-and-drop task reordering, built-in calendar view, and automated notification timers.",
+      technologies: ["HTML5", "CSS3", "Vanilla JavaScript", "Web Speech API", "chrono-node"],
       keyFeatures: [
-        "Sub-millisecond faceted product search & multi-attribute filter",
-        "Dynamic AVIF/WebP image optimization pipeline",
-        "Optimistic cart state management with real-time database sync",
-        "Dark luxury aesthetic with subtle gem shine hover animations"
+        "Voice & text task creation with natural language date parsing",
+        "Smart voice reminders & browser notifications without manual timer setup",
+        "Tactile drag-and-drop task sorting & interactive calendar planning view",
+        "100% client-side execution ensuring zero backend latency & complete data privacy"
       ],
-      performance: "Sub-500ms API response times and sub-second full page loads globally.",
-      outcome: "Achieved sub-second global load times and a 99/100 Google Lighthouse performance score.",
-      results: "Boosted ecommerce checkout conversion rate by 28% and reduced page load times by 62%."
-    }
-  },
-  {
-    id: "photography-accessories-platform",
-    title: "Photography Accessories Platform",
-    category: "Full Stack Performance Platform",
-    shortDescription: "A precision gear platform engineered for professional photographers, featuring lens compatibility matrices and tactile dark mode UI.",
-    tags: ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Supabase", "GSAP"],
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&q=80",
-    caseStudy: {
-      overview: "A technical full stack web application engineered for camera equipment professionals, prioritizing complex lens compatibility checks, tactile dark room aesthetics, and instant checkout flows.",
-      challenge: "Filtering complex camera mount standards, focal length parameters, and multi-brand accessory compatibility cleanly on mobile viewports.",
-      approach: "Engineered an interactive compatibility matrix interface backed by optimized PostgreSQL relational data schemas and Express.js REST API endpoints.",
-      solution: "Created interactive mount selector widgets, micro-animated spec cards, and a streamlined one-click checkout experience.",
-      technologies: ["Next.js", "Node.js", "Express.js", "PostgreSQL", "Supabase", "GSAP"],
-      keyFeatures: [
-        "Interactive camera mount & lens compatibility calculator",
-        "Tactile dark mode UI styled after professional camera viewfinders",
-        "Fast REST API endpoints backed by indexed PostgreSQL schemas",
-        "Micro-animated product spec detail cards"
-      ],
-      performance: "Optimized bundle size under 85kb initial JS payload with instant client filter state.",
-      outcome: "Streamlined the equipment buyer journey, reducing bounce rate by 38% and elevating brand authority.",
-      results: "Reduced mobile bounce rate by 38% and increased repeat customer orders by 32%."
+      performance: "Zero backend dependency delivering instantaneous offline-first task operations.",
+      outcome: "Deployed live on Vercel as an intuitive, privacy-focused voice task manager.",
+      results: "Featured as a key interactive AI productivity project."
     }
   }
 ];
+

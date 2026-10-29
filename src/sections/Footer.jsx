@@ -52,13 +52,13 @@ export default function Footer() {
                 letterSpacing: '1.5px'
               }}
             >
-              SHAN
+              DALWINRAJU R
             </h3>
             <p style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', margin: '0 0 8px', letterSpacing: '1px', textTransform: 'uppercase', fontWeight: 600 }}>
-              Creative Full Stack Developer
+              Software Developer | Frontend Developer | UI/UX Designer
             </p>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)', margin: 0, maxWidth: '400px', fontWeight: 300 }}>
-              Building immersive digital experiences with modern technologies.
+              Building responsive, user-centered digital applications.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function Footer() {
           className="footer-bottom-row"
         >
           <div>
-            &copy; {currentYear} Shan. All rights reserved.
+            &copy; {currentYear} Dalwinraju R. All rights reserved.
           </div>
           <div>
             Designed with intention. Engineered for performance.

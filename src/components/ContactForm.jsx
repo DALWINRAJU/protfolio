@@ -78,14 +78,14 @@ export default function ContactForm() {
         width: '100%',
         position: 'relative'
       }}
-      aria-label="Send a message to Shan"
+      aria-label="Send a message to Dalwinraju R"
     >
       <div style={{ textAlign: 'left', borderBottom: '1px solid var(--border-primary)', paddingBottom: '16px' }}>
         <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-heading)', margin: '0 0 4px', color: 'var(--text-primary)' }}>
-          Start a Project Conversation
+          Start a Conversation
         </h3>
         <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>
-          Tell me about your vision, technical scope, or timeline.
+          Tell me about your project, job opportunity, or inquiry.
         </p>
       </div>
 
@@ -104,7 +104,7 @@ export default function ContactForm() {
             fontWeight: 500
           }}
         >
-          Thank you! Your message was transmitted successfully. Shan will respond within 24 hours.
+          Thank you! Your message was transmitted successfully. Dalwinraju R will respond promptly.
         </div>
       )}
 
@@ -123,7 +123,7 @@ export default function ContactForm() {
             fontWeight: 500
           }}
         >
-          Something went wrong. Please try again or email directly at contact@shan.dev
+          Something went wrong. Please try again or email directly at dalwinraju2006@gmail.com
         </div>
       )}
 

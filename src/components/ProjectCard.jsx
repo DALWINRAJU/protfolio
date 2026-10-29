@@ -198,6 +198,39 @@ export default function ProjectCard({ project }) {
             </span>
           ))}
         </div>
+
+        {/* Live link if available */}
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              marginTop: '16px',
+              fontSize: '0.82rem',
+              color: 'var(--accent-primary)',
+              fontWeight: 600,
+              letterSpacing: '0.5px',
+              borderBottom: '1px solid rgba(0, 217, 255, 0.3)',
+              paddingBottom: '2px',
+              width: 'fit-content',
+              transition: 'border-color var(--transition-fast), color var(--transition-fast)'
+            }}
+            className="project-live-link"
+            aria-label={`Open ${project.title} live site`}
+          >
+            View Live
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+        )}
       </div>
       
       {/* CSS overrides for styling */}
@@ -205,6 +238,10 @@ export default function ProjectCard({ project }) {
         .project-card-link:focus-visible {
           outline: 2px solid var(--focus-ring) !important;
           outline-offset: 4px !important;
+        }
+        .project-live-link:hover {
+          color: var(--accent-secondary) !important;
+          border-color: var(--accent-secondary) !important;
         }
       `}</style>
     </a>

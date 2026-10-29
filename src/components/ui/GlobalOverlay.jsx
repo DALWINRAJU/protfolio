@@ -385,12 +385,14 @@ const ContentCard = ({ content, isOpen, onClose, isMobile }) => {
                                 {label}
                             </span>
                             <h2 style={{
-                                fontSize: '1.8rem',
+                                fontSize: isMobile ? '1.4rem' : '1.7rem',
                                 margin: 0,
                                 lineHeight: 1.2,
                                 fontWeight: 800,
                                 color: '#1a1a1a',
                                 fontFamily: "'Cabin Sketch', cursive", // High-contrast solid black font
+                                wordBreak: 'break-word',
+                                overflowWrap: 'break-word'
                             }}>
                                 {content.title}
                             </h2>
@@ -520,29 +522,16 @@ const ContentCard = ({ content, isOpen, onClose, isMobile }) => {
                                 lineHeight: 1.6,
                                 color: '#1a1a1a',
                                 fontWeight: 700,
-                                fontSize: '1.1rem',
+                                fontSize: isMobile ? '1rem' : '1.1rem',
                                 margin: 0,
                                 minHeight: '80px',
+                                wordBreak: 'break-word',
+                                overflowWrap: 'break-word',
                                 ...getStaggerStyle(300)
                             }}>
                                 {content.description}
                             </p>
 
-                            {/* Action Button */}
-                            <div style={{
-                                marginTop: 'auto',
-                                paddingTop: '1rem',
-                                ...getStaggerStyle(400)
-                            }}>
-                                <a
-                                    href={content.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="studio-action-button"
-                                >
-                                    Open Link ↗
-                                </a>
-                            </div>
                         </>
                     )}
                 </div>

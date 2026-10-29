@@ -367,8 +367,8 @@ const MessagePaper = ({ position = [0, 0.05, 2], onSend }) => {
         }
     }, []);
 
-    // Handle send button click - Submit to Web3Forms
-    const handleButtonClick = useCallback(async () => {
+    // Handle send button click - Send to dalwinraju2006@gmail.com
+    const handleButtonClick = useCallback(() => {
         // Reset previous status
         setSubmitStatus(null);
 
@@ -380,105 +380,22 @@ const MessagePaper = ({ position = [0, 0.05, 2], onSend }) => {
         setErrors({});
 
         try {
-            // --- 0. Rate Limiting (1 message per 30 min) ---
-            const rateCheck = checkRateLimit();
-            if (!rateCheck.allowed) {
-                setErrors({ message: `Please wait ${rateCheck.minutesLeft} min before sending again.` });
-                setIsSubmitting(false);
-                return;
-            }
+            // Direct Mailto to Dalwinraju's email address: dalwinraju2006@gmail.com
+            const mailtoUrl = `mailto:dalwinraju2006@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Inquiry')}&body=${encodeURIComponent(`From: ${email}\n\n${message}`)}`;
+            window.location.href = mailtoUrl;
 
-            // --- 0b. Timing Trap (must spend >3s on form) ---
-            const timeOnForm = Date.now() - formLoadedAt.current;
-            if (timeOnForm < 3000) {
-                // Bots submit instantly — silently fake success
-                setSubmitStatus('success');
-                setIsSubmitting(false);
-                return;
-            }
+            setSubmitStatus('success');
+            recordSubmission(); // Record for rate limiting
+            onSend?.({ message, email, subject });
 
-            // --- 0c. Origin / Domain Lock ---
-            // Block submissions from cloned repos running on unauthorized domains
-            const currentHost = window.location.hostname;
-            const isAllowedOrigin = ALLOWED_ORIGINS.some(d => currentHost === d || currentHost.endsWith('.' + d));
-            if (!isAllowedOrigin) {
-                // Silently fake success so attacker thinks it worked
-                setSubmitStatus('success');
-                setIsSubmitting(false);
-                return;
-            }
-
-            // --- 1. Honeypot check (Silent block) ---
-            if (botcheck) {
-                // If botcheck is filled out, act like it succeeded to fool the bot
-                setSubmitStatus('success');
-                setIsSubmitting(false);
-                return;
-            }
-
-            // --- 2. Modern 2026 AI Content Verification ---
-            const subjectAnalysis = analyzeContentAI(subject, true);
-            const messageAnalysis = analyzeContentAI(message, false);
-
-            if (subjectAnalysis.isSpam || messageAnalysis.isSpam) {
-                setErrors({ message: 'Our AI flagged this as spam. Please write clearly.' });
-                setIsSubmitting(false);
-                return;
-            }
-
-            // --- 3. Email Domain MX Record Validation (DoH) ---
-            const domain = email.split('@')[1];
-            if (domain) {
-                try {
-                    const dnsRes = await fetch(`https://cloudflare-dns.com/dns-query?name=${domain}&type=MX`, {
-                        headers: { 'Accept': 'application/dns-json' }
-                    });
-                    const dnsData = await dnsRes.json();
-                    
-                    // Status 0 is NOERROR. If no MX records (type 15), domain can't receive mail.
-                    // Status 3 is NXDOMAIN (domain doesn't exist at all).
-                    if (dnsData.Status === 3 || (dnsData.Status === 0 && (!dnsData.Answer || !dnsData.Answer.some(a => a.type === 15)))) {
-                        setErrors({ email: 'Domain does not exist or cannot receive emails.' });
-                        setIsSubmitting(false);
-                        return;
-                    }
-                } catch (dnsErr) {
-                    console.warn('DNS validation failed, bypassing...', dnsErr);
-                }
-            }
-
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_KEY,
-                    from_name: 'Portfolio Contact',
-                    email: email,
-                    subject: subject,
-                    message: message
-                })
-            });
-
-            const result = await response.json();
-
-            if (result.success) {
-                setSubmitStatus('success');
-                recordSubmission(); // Record for rate limiting
-                onSend?.({ message, email, subject });
-
-                // Clear form after success
+            // Clear form after success
+            setTimeout(() => {
                 setMessage('');
                 setEmail('');
                 setSubject('');
-                formLoadedAt.current = Date.now(); // Reset timing trap
-            } else {
-                throw new Error(result.message || 'Failed to send');
-            }
+                formLoadedAt.current = Date.now();
+            }, 1200);
         } catch (error) {
-            // console.error('❌ Send failed:', error);
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);

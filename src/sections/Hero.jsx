@@ -117,7 +117,7 @@ export default function Hero({ isLoaded }) {
                 margin: '0 0 6px'
               }}
             >
-              SHAN
+              DALWINRAJU R
             </h2>
 
             {/* Professional Title Display */}
@@ -133,7 +133,7 @@ export default function Hero({ isLoaded }) {
                 margin: '0 0 24px'
               }}
             >
-              Creative Full Stack Developer
+              Software Developer | Frontend Developer | UI/UX Designer
             </p>
 
             {/* Headline */}
@@ -149,7 +149,7 @@ export default function Hero({ isLoaded }) {
               }}
               className="text-gradient"
             >
-              Building Digital Experiences Beyond Ordinary.
+              Building Responsive, Intuitive Digital Products.
             </h1>
 
             {/* Subheading */}
@@ -163,7 +163,7 @@ export default function Hero({ isLoaded }) {
                 fontWeight: 300
               }}
             >
-              I design and engineer immersive web experiences using modern frontend technologies, scalable backend architecture, motion design, and creative storytelling.
+              Motivated full-stack developer blending React.js, Java, Spring Boot, and strong UI/UX design principles — wireframing, prototyping, and user research — to deliver clean, scalable applications.
             </p>
 
             {/* Action CTAs */}
