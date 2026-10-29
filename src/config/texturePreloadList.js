@@ -173,8 +173,16 @@ export const CONTACT_TEXTURES = [
 
 // About Room textures (loaded via useLoader(TextureLoader))
 export const ABOUT_TEXTURES = [
-    // Avatar
-    '/textures/about/awatarnachmurce.webp',
+    // Avatar animation frames
+    '/textures/corridor/avatar_anim/1.webp',
+    '/textures/corridor/avatar_anim/2.webp',
+    '/textures/corridor/avatar_anim/3.webp',
+    '/textures/corridor/avatar_anim/4.webp',
+    '/textures/corridor/avatar_anim/5.webp',
+    '/textures/corridor/avatar_anim/6.webp',
+    '/textures/corridor/avatar_anim/7.webp',
+    '/textures/corridor/avatar_anim/8.webp',
+    '/textures/corridor/avatar_anim/9.webp',
     // Awards
     '/textures/about/SOTY.webp',
     '/textures/about/SOTY_painted.webp',

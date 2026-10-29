@@ -253,35 +253,58 @@ const InfiniteSkyManager = ({ scrollProgressRef }) => {
     );
 };
 
+const AVATAR_ANIM_FRAMES = [
+    '/textures/corridor/avatar_anim/1.webp',
+    '/textures/corridor/avatar_anim/2.webp',
+    '/textures/corridor/avatar_anim/3.webp',
+    '/textures/corridor/avatar_anim/4.webp',
+    '/textures/corridor/avatar_anim/5.webp',
+    '/textures/corridor/avatar_anim/6.webp',
+    '/textures/corridor/avatar_anim/7.webp',
+    '/textures/corridor/avatar_anim/8.webp',
+    '/textures/corridor/avatar_anim/9.webp',
+];
+
 /**
  * INTRO Milestone - Special detailed layout
  * Elements spread apart as they approach camera
  */
 const IntroMilestone = ({ z, scrollProgressRef }) => {
-    // Load avatar texture
-    const avatarTexture = useLoader(THREE.TextureLoader, '/textures/about/awatarnachmurce.webp');
+    // Load avatar animation textures
+    const rawAvatarTextures = useLoader(THREE.TextureLoader, AVATAR_ANIM_FRAMES);
     const { camera, viewport } = useThree();
     const isTouch = isTouchDevice();
+
+    const avatarTextures = useMemo(() => {
+        const texArray = Array.isArray(rawAvatarTextures) ? rawAvatarTextures : [rawAvatarTextures];
+        texArray.forEach((tex) => {
+            if (tex) {
+                tex.colorSpace = THREE.SRGBColorSpace;
+            }
+        });
+        return texArray;
+    }, [rawAvatarTextures]);
 
     // Refs for all animated elements
     const groupRef = useRef();
     const titleRef = useRef();
     const brandRef = useRef();
     const avatarRef = useRef();
+    const avatarMaterialRef = useRef();
+    const animTimerRef = useRef(0);
+    const frameIndexRef = useRef(0);
     const motto1Ref = useRef();
     const motto2Ref = useRef();
 
     // Base positions
-    const baseY = 2;
+    const baseY = 2.1;
 
-    // Calculate aspect ratio
-    // LEGACY FIX: Use original dimensions (2816x1536) to prevent stretching
-    const legacyAspectRatio = 2816 / 1536; 
-    const avatarWidth = 6; // Zwiększony rozmiar awatara na chmurce
-    const avatarHeight = avatarWidth / legacyAspectRatio;
+    // Dimensions: avatar_anim images are 1080x1080 (1:1 square aspect ratio)
+    const avatarWidth = 3.4;
+    const avatarHeight = 3.4;
 
-    // Animation: floating + spread apart when close
-    useFrame((state) => {
+    // Animation: floating + spread apart when close + frame animation
+    useFrame((state, delta) => {
         if (!groupRef.current) return;
 
         const time = state.clock.elapsedTime;
@@ -294,6 +317,20 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
 
         // Skip rest if not visible
         if (!groupRef.current.visible) return;
+
+        // Animate avatar frames (approx 9 FPS for sketchy hand-drawn feel)
+        if (avatarTextures.length > 0) {
+            const FPS = 9;
+            const frameDuration = 1 / FPS;
+            animTimerRef.current += delta;
+            if (animTimerRef.current >= frameDuration) {
+                animTimerRef.current = animTimerRef.current % frameDuration;
+                frameIndexRef.current = (frameIndexRef.current + 1) % avatarTextures.length;
+                if (avatarMaterialRef.current) {
+                    avatarMaterialRef.current.map = avatarTextures[frameIndexRef.current];
+                }
+            }
+        }
 
         // FIX: Use consistent distance based on scrollProgress + offset
         // This ensures animations work IDENTICALLY regardless of chunk/camera position
@@ -368,11 +405,13 @@ const IntroMilestone = ({ z, scrollProgressRef }) => {
                 CREATIVE FULL STACK DEVELOPER
             </Text>
 
-            {/* Avatar on cloud - floating + spreads up-left */}
+            {/* Animated Avatar - floating + spreads up-left */}
             <mesh ref={avatarRef} position={[0, baseY, 0]}>
                 <planeGeometry args={[avatarWidth, avatarHeight]} />
-                <meshBasicMaterial color="#ffffff"
-                    map={avatarTexture}
+                <meshBasicMaterial
+                    ref={avatarMaterialRef}
+                    color="#ffffff"
+                    map={avatarTextures[0]}
                     transparent
                     side={THREE.DoubleSide}
                     depthWrite={false}
