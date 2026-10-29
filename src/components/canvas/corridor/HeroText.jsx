@@ -8,7 +8,7 @@ const RUBIK_SCRIBBLE_URL = '/fonts/RubikScribble-Regular.ttf';
 const CABIN_SKETCH_URL = '/fonts/CabinSketch-Regular.ttf';
 
 /**
- * HeroText Component - Custom styled for Shan
+ * HeroText Component - Custom styled for Dalwin
  */
 const HeroText = ({ position = [0, 0.3, 0] }) => {
     const groupRef = useRef();
@@ -88,7 +88,7 @@ const HeroText = ({ position = [0, 0.3, 0] }) => {
 
         splitAmount.current = THREE.MathUtils.lerp(splitAmount.current, targetSplit.current, 0.08);
 
-        // Apply split to each letter of SHAN
+        // Apply split to each letter of DALWIN
         letterRefs.current.forEach((ref, i) => {
             if (ref) {
                 if (ref.material) ref.material.opacity = 1;
@@ -119,7 +119,7 @@ const HeroText = ({ position = [0, 0.3, 0] }) => {
 
     return (
         <group ref={groupRef} position={position} scale={[scale, scale, 1]}>
-            {/* SHAN Letters */}
+            {/* DALWIN Letters */}
             {letters.map((letter, i) => (
                 <Text
                     key={`${letter.char}-${i}`}

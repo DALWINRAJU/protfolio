@@ -153,8 +153,6 @@ const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY || '';
 // Only these domains are allowed to submit the form.
 // Anyone cloning the repo and running on localhost will be silently blocked.
 const ALLOWED_ORIGINS = [
-    'shan.dev',
-    'www.shan.dev',
     'localhost',
     '127.0.0.1',
 ];

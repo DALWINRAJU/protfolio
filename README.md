@@ -1,8 +1,6 @@
-# 🎨 Sketch Portfolio
+# 🎨 Dalwin's 3D Sketch Portfolio
 
-> **An immersive, hand-drawn 3D interactive portfolio experience built with React 19, Three.js, React Three Fiber, and GSAP.**
-
-🌐 **Live Demo:** [https://sketch-portfolio.shajith870.workers.dev/](https://sketch-portfolio.shajith870.workers.dev/)
+> **An immersive, hand-drawn 3D interactive portfolio experience for Dalwinraju R — Software Developer, Frontend Developer & UI/UX Designer.** Built with React 19, Three.js, React Three Fiber, and GSAP.
 
 ---
 
@@ -16,7 +14,9 @@
 
 ## ✨ Overview
 
-**Sketch Portfolio** is a unique, sketch-book themed 3D interactive web app. It blends hand-drawn aesthetics with real-time 3D web graphics, spatial ambient audio, interactive room exploration, and smooth paper-style transitions.
+**Dalwin's 3D Sketch Portfolio** is a unique sketchbook-themed 3D interactive web experience. It blends hand-drawn pencil & paper aesthetics with real-time 3D web graphics, spatial ambient audio, interactive room exploration, and smooth paper-style transitions.
+
+Visitors walk through a hand-sketched architectural corridor, inspect gallery exhibits and certificates, explore project showcases, and interact with 3D rooms.
 
 ---
 
@@ -25,9 +25,20 @@
 - 🎭 **3D Hand-Drawn Interactive World**: Explore 3D sketch rooms and environments rendered via React Three Fiber and Three.js.
 - ⚡ **Adaptive Performance Engine**: Dynamic hardware tiering that auto-scales DPR, shadows, antialiasing, and texture resolution based on the user's GPU & CPU capabilities.
 - 📜 **Handwritten & GSAP Animations**: Smooth camera movements, custom paper transitions, and animated stroke-drawing effects via Vara.js and GSAP.
-- 🎧 **Spatial Audio System**: Custom audio manager providing room ambience, sound effects, and volume controls.
+- 🎧 **Spatial Audio System**: Custom audio manager providing room ambience, footsteps, interactive sound effects, and volume controls.
+- 🖼️ **Interactive Frames & Certificates**: Inspectable gallery frames and certificates with full rotation, zoom, and inspection capabilities.
 - 🗺️ **Navigation & Teleportation**: Quick-access map UI and deep-link routing for seamless room switching.
-- 📱 **Responsive & Mobile Ready**: Tailored layouts, touch controls, and optimized asset preloading across desktop, tablet, and mobile browsers.
+- 📱 **Responsive & Mobile Ready**: Tailored layouts, touch controls, retina DPR scaling, and optimized asset preloading across desktop, tablet, and mobile browsers.
+
+---
+
+## 🏛️ Interactive Rooms
+
+1. **The Corridor**: The entry hall featuring 3D avatar, floating typography, inspectable certificates, and doors leading to each room.
+2. **About Me**: Interactive sketchbook highlighting Dalwin's education, journey, technical background, and passion for software engineering.
+3. **Projects Gallery**: Curated showcase of software projects with live demo links, source code, and tech tags.
+4. **Skills Studio**: 3D interactive terminal and monitors illustrating core competencies across Frontend, Backend, Database, and UI/UX.
+5. **Contact Room**: 3D interactive paper letter interface allowing direct communication and inquiries.
 
 ---
 
@@ -53,8 +64,8 @@ Ensure you have **Node.js 18+** and **npm** installed on your system.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/shajith23/sketch-portfolio.git
-cd sketch-portfolio
+git clone https://github.com/DALWINRAJU/protfolio.git
+cd protfolio
 ```
 
 ### 2. Install Dependencies
@@ -78,73 +89,26 @@ Open your browser and navigate to `http://localhost:5173`.
 | Command | Action |
 | :--- | :--- |
 | `npm run dev` | Launch local development server via Vite |
-| `npm run build` | Bundle and optimize production files to `dist/` |
+| `npm run build` | Bundle and optimize production files into `dist/` |
 | `npm run preview` | Serve the local `dist/` production build |
 | `npm run lint` | Run Oxlint for fast code quality checks |
 
 ---
 
-## ☁️ Deployment Guide (Cloudflare Pages)
+## ☁️ Deployment Guide
 
-Follow these step-by-step instructions to deploy the application on **Cloudflare Pages**.
+### Deploying on Render (Static Site)
 
-### Option 1: Automatic Deployment via Git Integration (Recommended)
-
-1. **Push Changes to GitHub**:
-   Ensure all code is committed and pushed to your GitHub repository:
-   ```bash
-   git add .
-   git commit -m "docs: add deployment instructions"
-   git push origin main
-   ```
-
-2. **Connect Repository to Cloudflare Pages**:
-   - Log into the [Cloudflare Dashboard](https://dash.cloudflare.com/).
-   - Navigate to **Workers & Pages** > **Create application** > **Pages** tab.
-   - Click **Connect to Git** and authorize your GitHub account.
-   - Select your repository (`sketch-portfolio`).
-
-3. **Configure Build Settings**:
-   - **Project Name**: `sketch-portfolio`
-   - **Production Branch**: `main`
-   - **Framework Preset**: `Vite`
+1. Sign in to [Render Dashboard](https://dashboard.render.com/) with your GitHub account (**DALWINRAJU**).
+2. Click **New +** → **Static Site**.
+3. Select your repository: **`protfolio`**.
+4. Configure the build parameters:
+   - **Branch**: `main`
    - **Build Command**: `npm run build`
-   - **Build Output Directory**: `dist`
-
-4. **Set Environment Variables**:
-   - Under **Environment variables (advanced)**, add:
-     - `NODE_VERSION` = `20`
-
-5. **Save & Deploy**:
-   - Click **Save and Deploy**. Cloudflare will run the build process and deploy your site.
-   - Any future commits pushed to `main` will automatically trigger automatic deployments.
+   - **Publish Directory**: `dist`
+5. Click **Create Static Site**. Render will build and deploy your site with a free SSL certificate.
 
 ---
-
-### Option 2: Direct Terminal Deployment via Wrangler CLI
-
-If you want to deploy directly from your local terminal:
-
-1. **Authenticate with Cloudflare**:
-   ```bash
-   npx wrangler login
-   ```
-
-2. **Build the Production Bundle**:
-   ```bash
-   npm run build
-   ```
-
-3. **Deploy the `dist/` Directory**:
-   ```bash
-   npx wrangler pages deploy dist --project-name=sketch-portfolio
-   ```
-
-4. **Complete Deployment**:
-   - Wrangler will deploy your `dist/` folder and output the live deployment URL.
-
----
-
 
 ## 📂 Project Structure
 
@@ -172,12 +136,19 @@ sketch-portfolio/
 
 ---
 
+## 👤 Author
+
+**Dalwinraju R**
+- **GitHub**: [@DALWINRAJU](https://github.com/DALWINRAJU)
+- **Role**: Software Developer | Frontend Developer | UI/UX Designer
+- **Email**: [dalwinraju2006@gmail.com](mailto:dalwinraju2006@gmail.com)
+
+---
+
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
----
-
 <p align="center">
-  Crafted with Shan❤️ and ☕ using React 19 & Three.js
+  Crafted with ❤️ and ☕ by Dalwinraju R
 </p>

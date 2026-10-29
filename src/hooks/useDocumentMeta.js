@@ -74,12 +74,12 @@ export function useDocumentMeta() {
         if (ogDesc) ogDesc.setAttribute('content', meta.description);
 
         const ogUrl = document.querySelector('meta[property="og:url"]');
-        if (ogUrl) ogUrl.setAttribute('content', `https://shan.dev${meta.path}`);
+        if (ogUrl) ogUrl.setAttribute('content', `${window.location.origin}${meta.path}`);
 
         // Update canonical link
         const canonicalTag = document.querySelector('link[rel="canonical"]');
         if (canonicalTag) {
-            canonicalTag.setAttribute('href', `https://shan.dev${meta.path}`);
+            canonicalTag.setAttribute('href', `${window.location.origin}${meta.path}`);
         }
 
         // Push to browser history

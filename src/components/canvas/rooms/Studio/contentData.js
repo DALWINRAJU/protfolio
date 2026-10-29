@@ -1,7 +1,7 @@
 /**
  * Studio Content Data
  * 
- * Custom content for Shan's interactive monitor towers.
+ * Custom content for Dalwin's interactive monitor towers.
  */
 
 export const PLATFORM_CONFIG = {

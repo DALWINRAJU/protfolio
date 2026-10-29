@@ -131,7 +131,7 @@ const CorridorSegment = ({
 
             {/* === WELCOME AREA (Start of segment) - MOVED CLOSER === */}
             <group position={[0, 0, zOffset - 2]}>
-                {/* SHAN 3D Header - Floating above avatar */}
+                {/* DALWIN 3D Header - Floating above avatar */}
                 <HeroText position={[0, 0.85, -0.5]} />
 
                 {/* Avatar - center */}
